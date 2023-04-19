@@ -1,33 +1,47 @@
-import { useState } from 'react'
-import "./Navbar.scss"
+import { useState } from 'react';
+import "./Navbar.scss";
+
+//=================== import icons ===================
+import {AiOutlinePlusCircle} from 'react-icons/ai';
+import {BiShoppingBag} from "react-icons/bi"
 //================== import images ================================
+import logo from "../../assets/vector.png"
+import logo1 from "../../assets/Group 2.png"
+
 const Navbar = () => {
-    return ( <div className='header' >
+    return (
+         <div className='header' >
      <div className="logoDiv">
-        <img src="" alt="" className="logo" />
+        <img src={logo1} alt="" className="logo logoBag" />
+        <img src={logo} alt="" className="logo logoText" />
      </div>
 
     {/* ==========================the menuBar and it's options====================== */}
      <div className='navbar'>
         <ul className="menu">
             <li className="listItem">
-                <a href="/#" className="link">Used Cars</a>
+                <a href="/#" className="link">electronic</a>
             </li>
             <li className="listItem">
-                <a href="/#" className="link">New Cars</a>
+                <a href="/#" className="link">women</a>
             </li>
             <li className="listItem">
-                <a href="/#" className="link">Auctions</a>
+                <a href="/#" className="link">men</a>
             </li>
             <li className="listItem">
-                <a href="/#" className="link">Sell</a>
+                <a href="/#" className="link">jewerly</a>
             </li>
         </ul>
         {/*=============================== add icons to navbar for exit ============================== */}
      </div>
-     <div className='signUp flex'>
-        <div className='text'>Sign Up</div>
-        {/*=============================== add icons to navbar for show sign-up ============================== */}
+     <div className='product'>
+        <div className='text'>
+            <AiOutlinePlusCircle className='plus'/>
+            <span>Add product</span>
+        </div>
+        <div className='bagContainer'>
+            <BiShoppingBag  className='bag'/>
+        </div>
      </div>
     </div> );
 }
