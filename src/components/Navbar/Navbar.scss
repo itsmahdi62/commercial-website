@@ -1,0 +1,118 @@
+// default colors 
+:root{
+    --primaryColor:#7a63f1;
+    --blackColor: #434344;
+    --secondryColor:  #dad9df;
+    --textColor: #a3a3a3;
+    --greyColor:#f4f4f4;
+    --whiteColor:#f5f4fa;
+    --blackColor:#434344;
+   }
+
+// ****** styles ******
+.header{
+    position: fixed;
+    display: flex;
+    background-color:var(--whiteColor);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 6px rgb(237,237,237);
+    z-index: 1000;
+    .logoDiv {
+       .logo{
+        width: 45px;
+        height: 45px;
+       }
+    }    
+//**** don't need to change ****
+    @media screen and (max-width:768px) {
+        .navbar{
+            position: absolute;
+            background-color: var(--secondryColor);
+            width: 80%;
+            top: -250%;
+            right: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            border-radius: 10px; 
+            text-align: center;
+            padding: 2rem;
+            transition:  0.3s ease;
+            z-index: 2000;
+
+            .closeIcon{
+                position: absolute;
+                bottom:  -15px;
+                right: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                background: var(--secondryColor);
+                color: var(--primaryColor);
+                padding: 3px;
+                border-radius: 50%;
+                font-size: 35px;
+                &:hover{
+                color:  red;
+              
+            }
+            }
+            .menu{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                .listItem{
+                    padding:  0.5rem 1rem;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: 0.3 ease;
+
+                    a{
+                        font-size: 15px;
+                    }
+                    &:hover{
+                        background: var(--primaryColor);
+                        color: var(--whiteColor);
+                        transition: 0.3 ease;
+                    }
+                    &:hover a{
+                        background: var(--primaryColor);
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        } 
+        .showNavbar{
+            top: 12rem;
+            transition: 0.8s ease;
+        }
+    }   
+// * * * * * * * * * * * * * * * * 
+    .signUp{
+        gap : 1rem ;
+        .text{
+            padding: 3px 10px;
+            background: var(--primaryColor);
+            border-radius: 3px ;
+            color: var(--whiteColor);
+            cursor: pointer;
+            &:hover{
+                background-color: var(--secondryColor);
+                color: var(--blackColor);
+            }
+        }
+        .toggleNavbar{
+            background-color: none;
+            color: var(--primaryColor);
+            font-weight: 600;
+            font-size: 25px;
+        }   
+    }
+}
+
+.addBg{
+    background-color: var(--secondryColor) ;
+    box-shadow: none;
+}
