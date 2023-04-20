@@ -1,0 +1,43 @@
+:root{
+    --primaryColor:#6F11E1;
+    --secondryColor:  #4f3fa1;
+    --textColor: #a3a3a3;
+    --greyColor:#f4f4f4;
+    --whiteColor:#FFFFFF;
+    --blackColor:#404040;
+    --backColor: #E4E4E4;
+}
+
+.main{
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:50%;
+    margin: 0 50% 0 0;
+    .header{
+        background-color: var(--backColor);
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+    }
+    .pro{
+        display: flex;
+        border: 10px solid red;
+        justify-content: center;
+        align-items: center;
+
+
+        .information{
+            h4{
+                font-weight: 500;
+                font-size: 16px;
+            }
+            p{
+               font-weight: 400;
+               font-size: 14px; 
+            }
+        }
+    }
+}
