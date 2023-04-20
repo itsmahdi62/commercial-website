@@ -2,10 +2,20 @@ import productImage from '../../assets/Rectangle 7.png';
 import {BiShoppingBag} from 'react-icons/bi'
 import {AiOutlineStar} from "react-icons/ai"
 
+import { useState } from 'react';
+
+
 import "./Product.scss"
+
 const Product = (props) => {
+    const [modal , setModal ] = useState(false)
+
+    const modalHandler = () =>{
+        setModal(true)
+    }
+
     return ( 
-        <div className='product'>
+        <div className='product' onClick={modalHandler}>
             <div className='imgDiv'>
             <img src={productImage} alt="" />
             </div>

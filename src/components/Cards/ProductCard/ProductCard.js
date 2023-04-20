@@ -1,7 +1,6 @@
 import "./ProductCard.scss"
 import {AiOutlineStar} from "react-icons/ai"
 import { BiShoppingBag } from "react-icons/bi"
-import imG from "../../../assets/Rectangle 7.png"
 
 const ProductCard = (props) => {
     return ( 
@@ -12,7 +11,7 @@ const ProductCard = (props) => {
             </div>
             <div className="pro">
                 <div className="imgDiv">
-                    <img src={imG} alt="" />
+                    <img src={props.img} alt="" />
                 </div>
                 <div className="information">
                     <h4>{props.title}</h4>

@@ -10,8 +10,8 @@
 
 .main{
     border-radius: 10px;
-    z-index: 10;
-    display: flex;
+    border: 10px solid red;
+    display: grid;
     flex-direction: column;
     position: absolute;
     top:50%;
