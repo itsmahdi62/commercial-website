@@ -4,14 +4,15 @@ import Product from "../../components/Product/Product"
 // ============== import hooks ==========
 import { useState } from "react"
 
+//================ import images ===========
+import banner from "../../assets/banner.png"
+import productImage from '../../assets/Rectangle 7.png';
+
 // ============== import icons ============
 import {HiSortDescending} from "react-icons/hi"
 import {AiOutlineArrowUp} from "react-icons/ai"
 import {AiOutlineArrowDown} from "react-icons/ai"
 
-//================ import images ===========
-import banner from "../../assets/banner.png"
-import productImage from '../../assets/Rectangle 7.png';
 
 const Home = () => {
     const point = [1 , 2 , 3 , 4 , 5]
@@ -30,20 +31,19 @@ const Home = () => {
         </div>
 
         <div className="sortSection">
-            <div className="sorting  flex">
-                <HiSortDescending />
-                <span>sorting :</span>
+                <div className="sorting  flex">
+                    <HiSortDescending />
+                    <span>sorting :</span>
+                </div>
+                <div className="ascending flex">
+                    <span>Ascending</span>
+                    <AiOutlineArrowUp />
+                </div>
+                <div className="descending flex">
+                    <span>Descending</span>
+                    <AiOutlineArrowDown />
+                </div>
             </div>
-            <div className="ascending flex">
-                <span>Ascending</span>
-                <AiOutlineArrowUp />
-            </div>
-            <div className="descending flex">
-                <span>Descending</span>
-                <AiOutlineArrowDown />
-            </div>
-        </div>
-
         <div className="products flex">
            {
                 product.map((item) =>{
@@ -58,7 +58,6 @@ const Home = () => {
                 })
            }
         </div>
-
     </div>  );
 }
  

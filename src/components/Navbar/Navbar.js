@@ -34,7 +34,7 @@ const Navbar = () => {
         </ul>
         {/*=============================== add icons to navbar for exit ============================== */}
      </div>
-     <div className='product'>
+     <div className='products'>
         <div className='text'>
             <AiOutlinePlusCircle className='plus'/>
             <span>Add product</span>

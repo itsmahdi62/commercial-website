@@ -26,6 +26,7 @@
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
+        flex-direction: row;
         padding: 1rem 0;
         .logo{
             width: 100%;
@@ -62,7 +63,7 @@
         }
     }
     //add product section and bag logo(left)
-    .product{
+    .products{
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
@@ -99,6 +100,11 @@
                 color: var(--whiteColor);
                 font-size: 1.2rem ;
                 font-size: 30px;
+                cursor: pointer;
+            }
+            &:hover{
+                background-color: var(--secondryColor);
+                transition: 0.5s;
             }
         }
     }
@@ -166,9 +172,3 @@
         }
     }   
     // * * * * * * * * * * * * * * * ********** 
-
-
-.addBg{
-    background-color: var(--secondryColor) ;
-    box-shadow: none;
-}
