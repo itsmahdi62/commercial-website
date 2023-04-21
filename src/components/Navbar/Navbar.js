@@ -9,6 +9,7 @@ import {TbGridDots} from 'react-icons/tb'
 import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import axios from 'axios';
+
 const Navbar = () => {
     const[ navbar , setNavbar] = useState('navbar')
     const navbarHandler = () => {
@@ -57,8 +58,10 @@ const Navbar = () => {
      </div>
      <div className='products'>
         <div className='text'>
-            <AiOutlinePlusCircle className='plus'/>
-            <span>Add product</span>
+            <Link to='/AddProduct' className='link'>
+                <AiOutlinePlusCircle className='plus'/>
+                <span>Add product</span>
+            </Link>
         </div>
         <div className='bagContainer'>
             <BiShoppingBag  className='bag'/>

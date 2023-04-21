@@ -81,10 +81,13 @@
             padding: 0.8rem;
             background: var(--primaryColor);
             border-radius: 3px ;
-            color: var(--whiteColor);
             border-radius: 5px;
             cursor: pointer;
             display: flex;
+            .link{
+            color: var(--whiteColor);
+                
+            }
             span{
                 margin-left: 0.5rem;
                 font-weight: 400;
