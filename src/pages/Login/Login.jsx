@@ -5,7 +5,6 @@ import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import { useState } from 'react';
 const Login = ({token ,setToken}) => {
-
     const [username , setUsername] = useState("");
     const [password , setPassword] = useState("");
     const [error , setError] = useState("");
@@ -15,7 +14,7 @@ const Login = ({token ,setToken}) => {
       setUsername("");
       axios({
           method:"POST",
-          url:"https://fakestoreapi.com/login",
+          url:"https://fakestoreapi.com/auth/login",
           data:{
               username:username,
               password:password,
@@ -36,7 +35,6 @@ const Login = ({token ,setToken}) => {
           <div className="imgDiv">
             <img src={lock} alt="" />
           </div>
-
           <div className="infoDiv">
               <div className="titleDiv">
                   <div className="logoDiv">

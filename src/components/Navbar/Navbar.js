@@ -10,6 +10,8 @@ import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import axios from 'axios';
 
+
+import Category from '../Category/Category';
 const Navbar = () => {
     const[ navbar , setNavbar] = useState('navbar')
     const navbarHandler = () => {
@@ -20,7 +22,7 @@ const Navbar = () => {
     useEffect( ()=>{
         axios({
             method:"GET",
-            url: `https://schema.getpostman.com/json/collection/v2.1.0/collection.json`
+            url: 'https://fakestoreapi.com/products/categories'
         }).then(response =>{
             setData(response.data)
             console.log(response.data)
@@ -38,21 +40,9 @@ const Navbar = () => {
     {/* ==========================the menuBar and it's options====================== */}
      <div className={navbar}>
         <ul className="menu">
-        {data.map((product) =>{
-                return <li key={product.id}><Link to="/#" className='link'>{data.category}</Link></li>
+        {data.map((product, index) =>{
+                return <li key={product.id}  onClick={<Category type={data[index]} />} ><Link to="/#" className='link'>{data[index]}</Link></li>
         })}
-            {/* <li className="listItem">
-                <Link  to="/#" className="link">{data.category}</Link>
-            </li>
-            <li className="listItem">
-                <Link  to="/#" className="link">women</Link>
-            </li>
-            <li className="listItem">
-                <Link  to="/#" className="link">men</Link>
-            </li>
-            <li className="listItem">
-                <Link  to="/#" className="link">jewerly</Link>
-            </li> */}
         </ul>
         {/*=============================== add icons to navbar for exit ============================== */}
      </div>

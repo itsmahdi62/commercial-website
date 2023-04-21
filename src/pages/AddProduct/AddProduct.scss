@@ -8,105 +8,210 @@
     --backColor:#E4E4E4 ;
     --btnColor: #FD6644 ;
 }
-.add{
-    width: 30%;
-    margin: 10% auto;
-    text-align: center;
-    padding: 1rem;
-    p{
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 15px;
-        margin-bottom: 1rem;
-    }
-    &-box{
-        display: flex;
-        flex-direction: column;
-        .head{
-            border-radius: 10px  10px 0 0;
-            padding: 2rem 4rem;
-            background-color: var(--backColor);
-            text-align: left;
-            span{
-            font-style: normal;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 19px;
-            }
+@media screen and (min-width:700px) {
+    .add{
+        width: 30%;
+        margin: 8% auto;
+        text-align: center;
+        padding: 1rem;
+        p{
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 15px;
+            margin-bottom: 1rem;
         }
-        .body{
-            border-radius:0 0 10px  10px;
-            background-color: var(--greyColor);
-            width: 100%;
-            text-align: center;
-            align-self: center;
-            padding: 2rem;
-            .username{
-                border: 0.5px solid rgba(0, 0, 0, 0.274);
-                label{
-                    font-weight: 400;
-                    position: relative;
-                    top: -1.8rem;
-                    right: 4rem;
-                    background-color:var(--greyColor) ;
-                    padding: 0.4rem;
-                }
-                input{
-                    border: none;
-                    padding: 1.25rem;
-                    outline: none;
-                    background-color:var(--greyColor) ;
-
+        &-box{
+            display: flex;
+            flex-direction: column;
+            .head{
+                border-radius: 10px  10px 0 0;
+                padding: 2rem 4rem;
+                background-color: var(--backColor);
+                text-align: left;
+                span{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
                 }
             }
-            .password{
-                margin:  2rem 0;
-                border: 0.5px solid rgba(0, 0, 0, 0.288);
-                label{
-                    font-weight: 400;
-                    position: relative;
-                    top: -1.8rem;
-                    right: 4rem;
-                    background-color:var(--greyColor) ;
-                    padding: 0.4rem;
-                }
-                input{
-                    border: none;
-                    outline: none;
-                    padding: 1.25rem;
-                    background-color:var(--greyColor) ;
-                }
-            }
-            .btn-form{
-                display: flex;
-                justify-content: space-between;
-                gap: 1rem;
-                .cancel{
-                    flex: 5;
-                    border-radius: 5px;
-                    padding: 1rem;
-                    border: 0.5px solid var(--btnColor);
-                    color: var(--btnColor);
-                    background-color: transparent;
-                    cursor: pointer;
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 19px;
-                }
-                .addBtn{
-                    flex: 5;
-                    border-radius: 5px;
-                    padding: 1rem;
-                    border: 0.5px solid var(--btnColor);
-                    color: #FFFFFF ;
-                    background-color:  var(--btnColor);
-                    cursor: pointer;
-                    font-weight: 400;
-                    font-size: 16px;    
-                    line-height: 19px;
-                }
-            }
-        }
-    }
-}
+            .body{
+                border-radius:0 0 10px  10px;
+                background-color: var(--greyColor);
+                width: 100%;
+                text-align: center;
+                align-self: center;
+                padding: 2rem;
+                .username{
+                    border: 0.5px solid rgba(0, 0, 0, 0.274);
+                    label{
+                        font-weight: 400;
+                        position: relative;
+                        top: -1.8rem;
+                        right: 4rem;
+                        background-color:var(--greyColor) ;
+                        padding: 0.4rem;
+                    }
+                    input{
+                        border: none;
+                        padding: 1.25rem;
+                        outline: none;
+                        background-color:var(--greyColor) ;
     
+                    }
+                }
+                .password{
+                    margin:  2rem 0;
+                    border: 0.5px solid rgba(0, 0, 0, 0.288);
+                    label{
+                        font-weight: 400;
+                        position: relative;
+                        top: -1.8rem;
+                        right: 4rem;
+                        background-color:var(--greyColor) ;
+                        padding: 0.4rem;
+                    }
+                    input{
+                        border: none;
+                        outline: none;
+                        padding: 1.25rem;
+                        background-color:var(--greyColor) ;
+                    }
+                }
+                .btn-form{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    .cancel{
+                        flex: 5;
+                        border-radius: 5px;
+                        padding: 1rem;
+                        border: 0.5px solid var(--btnColor);
+                        color: var(--btnColor);
+                        background-color: transparent;
+                        cursor: pointer;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
+                    .addBtn{
+                        flex: 5;
+                        border-radius: 5px;
+                        padding: 1rem;
+                        border: 0.5px solid var(--btnColor);
+                        color: #FFFFFF ;
+                        background-color:  var(--btnColor);
+                        cursor: pointer;
+                        font-weight: 400;
+                        font-size: 16px;    
+                        line-height: 19px;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+@media screen and (max-width:700px) {
+    .add{
+        width: 30%;
+        margin: 10% auto;
+        text-align: center;
+        padding: 1rem;
+        p{
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 15px;
+            margin-bottom: 1rem;
+        }
+        &-box{
+            display: flex;
+            flex-direction: column;
+            .head{
+                border-radius: 10px  10px 0 0;
+                padding: 2rem 4rem;
+                background-color: var(--backColor);
+                text-align: left;
+                span{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                }
+            }
+            .body{
+                border-radius:0 0 10px  10px;
+                background-color: var(--greyColor);
+                width: 100%;
+                text-align: center;
+                align-self: center;
+                padding: 2rem;
+                .username{
+                    border: 0.5px solid rgba(0, 0, 0, 0.274);
+                    label{
+                        font-weight: 400;
+                        position: relative;
+                        top: -1.8rem;
+                        right: 4rem;
+                        background-color:var(--greyColor) ;
+                        padding: 0.4rem;
+                    }
+                    input{
+                        border: none;
+                        padding: 1.25rem;
+                        outline: none;
+                        background-color:var(--greyColor) ;
+    
+                    }
+                }
+                .password{
+                    margin:  2rem 0;
+                    border: 0.5px solid rgba(0, 0, 0, 0.288);
+                    label{
+                        font-weight: 400;
+                        position: relative;
+                        top: -1.8rem;
+                        right: 4rem;
+                        background-color:var(--greyColor) ;
+                        padding: 0.4rem;
+                    }
+                    input{
+                        border: none;
+                        outline: none;
+                        padding: 1.25rem;
+                        background-color:var(--greyColor) ;
+                    }
+                }
+                .btn-form{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    .cancel{
+                        flex: 5;
+                        border-radius: 5px;
+                        padding: 1rem;
+                        border: 0.5px solid var(--btnColor);
+                        color: var(--btnColor);
+                        background-color: transparent;
+                        cursor: pointer;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
+                    .addBtn{
+                        flex: 5;
+                        border-radius: 5px;
+                        padding: 1rem;
+                        border: 0.5px solid var(--btnColor);
+                        color: #FFFFFF ;
+                        background-color:  var(--btnColor);
+                        cursor: pointer;
+                        font-weight: 400;
+                        font-size: 16px;    
+                        line-height: 19px;
+                    }
+                }
+            }
+        }
+    }    
+}

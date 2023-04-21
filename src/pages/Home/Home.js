@@ -14,11 +14,17 @@ import {AiOutlineArrowDown} from "react-icons/ai"
 
 import Navbar from '../../components/Navbar/Navbar'
 const Home = () => {
+
+    
+
+
+
+
     const [data,setData] = useState([]);    
     useEffect( ()=>{
         axios({
             method:"GET",
-            url: `https://fakestoreapi.com/products`
+            url: 'https://fakestoreapi.com/products'
         }).then(response =>{
             setData(response.data)
             console.log(response.data)
@@ -55,7 +61,7 @@ const Home = () => {
                         description={item.description}
                         price={item.price}
                         point={item.point}
-                        img={item.imgSrc}
+                        img={item.image}
                     />)
                 })
            }

@@ -7,15 +7,13 @@ import "./Product.scss"
 
 const Product = (props) => {
     const [modal , setModal ] = useState(false)
-
     const modalHandler = () =>{
         setModal(true)
     }
-
     return ( 
         <div className='product' onClick={modalHandler}>
-            <div className='imgDiv'>
-            <img src={productImage} alt="" />
+            <div className='imgDivs'>
+            <img src={props.img} alt="" />
             </div>
             <div className='head'>
                 <div className='stars'>
