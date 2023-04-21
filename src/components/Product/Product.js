@@ -1,9 +1,7 @@
 import productImage from '../../assets/Rectangle 7.png';
 import {BiShoppingBag} from 'react-icons/bi'
-import {AiOutlineStar} from "react-icons/ai"
 
 import { useState } from 'react';
-
 
 import "./Product.scss"
 

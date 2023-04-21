@@ -2,11 +2,14 @@ import './App.scss'
 import Login from './pages/Login/Login'
 import { BrowserRouter  , Route,Routes } from 'react-router-dom';
 import Home from './pages/Home/Home.js'
-
-function App() {
+import { useState } from 'react';
+const App =()  =>{
+  const [token , setToken] = useState(null)
   return (
-    <BrowserRouter>
-    <div className="App">
+    <div>
+      {/* {token ? <Home /> : <Login token={token} setToken={setToken} />} */}
+      <BrowserRouter>
+       <div className="App">
         <main>
           <Routes>
             <Route path="/" element={<Home />}/>
@@ -14,7 +17,9 @@ function App() {
           </Routes>
         </main>
      </div>
-  </BrowserRouter>
+     </BrowserRouter>
+    </div>
+   
   )
 }
 

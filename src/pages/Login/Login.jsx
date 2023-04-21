@@ -4,30 +4,30 @@ import lock from "../../assets/downloadReceipt.png"
 import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import { useState } from 'react';
-const Login = () => {
+const Login = ({token ,setToken}) => {
+
     const [username , setUsername] = useState("");
     const [password , setPassword] = useState("");
     const [error , setError] = useState("");
-    const[token ,setToken] = useState()
     const loginHandler = () =>{
       setError("");
       setPassword("");
       setUsername("");
       axios({
           method:"POST",
-          url:"https://fakestoreapi.com/auth/login",
+          url:"https://fakestoreapi.com/login",
           data:{
               username:username,
               password:password,
           },
-      }).then(response =>{
-          console.log(response.data.token)
-          setToken(response.data.token)
-          localStorage.setItem("userToken",response.data.token)
-      }).catch((err) =>{
-          console.log(err.response.data)
-          setError(err.response.data)
-      })
+        }).then(response =>{
+            console.log(response.data.token)
+            setToken(response.data.token)
+            localStorage.setItem("userToken",response.data.token)
+        }).catch((err) =>{
+            console.log(err.response.data)
+            setError(err.response.data)
+        })
   }
 
   return (
@@ -49,13 +49,16 @@ const Login = () => {
               <div className="form">
                 <div className="username">
                   <label>Username</label>
-                  <input type="text" />
+                  <input type="text"  value={username} onChange={(e) =>setUsername(e.target.value)} />
                 </div>
                 <div className="password">
                   <label>password</label>
-                  <input type="password"/>
+                  <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
                 </div>
-                <button onClick={loginHandler}>Login</button>
+                <div className="btn">
+                  {error && <small>{('Wrong username or password')}</small>}
+                  <button onClick={loginHandler}>Login</button>
+                </div>
               </div>
           </div>
       </div>
