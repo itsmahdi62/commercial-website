@@ -6,18 +6,15 @@ import { useState , useEffect } from "react"
 
 //================ import images ===========
 import banner from "../../assets/banner.png"
-import productImage from '../../assets/Rectangle 7.png';
 
 // ============== import icons ============
 import {HiSortDescending} from "react-icons/hi"
 import {AiOutlineArrowUp} from "react-icons/ai"
 import {AiOutlineArrowDown} from "react-icons/ai"
 
-
+import Navbar from '../../components/Navbar/Navbar'
 const Home = () => {
-    const [data,setData] = useState([]);
-    const [loading,setLoading] = useState(false); 
-    
+    const [data,setData] = useState([]);    
     useEffect( ()=>{
         axios({
             method:"GET",
@@ -30,7 +27,7 @@ const Home = () => {
     })
     return ( 
     <div className="home">
-
+        <Navbar />
         <div className="banner">
             <img src={banner} alt="" />
         </div>
