@@ -6,7 +6,7 @@
     --whiteColor:#FFFFFF;
     --blackColor:#404040;
    }
-@media screen and (min-width:1024px){
+@media screen and (min-width:700px){
     .product{
         margin-top: 1rem;
         border-radius: 5px;
@@ -45,6 +45,9 @@
                 color: var(--whiteColor);
                 align-items: center;
                 background-color:#F74528 ;
+                span{
+                    padding: 4rem 1rem;
+                }
             }
             .title{
                 font-weight: 500;

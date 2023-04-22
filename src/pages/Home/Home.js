@@ -6,7 +6,7 @@ import { useState , useEffect } from "react"
 
 // ========== import redux hooks 
 import { useDispatch, useSelector } from "react-redux";
-import {fetchPosts} from '../postSlice'
+import {fetchPosts} from '../../postSlice'
 
 //================ import images ===========
 import banner from "../../assets/banner.png"

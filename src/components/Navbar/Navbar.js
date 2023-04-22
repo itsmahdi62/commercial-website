@@ -10,9 +10,19 @@ import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import axios from 'axios';
 
+//=========== import redux tools 
+import { useDispatch, useSelector } from "react-redux";
+import {fetchPosts} from '../../postSlice'
 
 import Category from '../Category/Category';
 const Navbar = () => {
+    // //======== get mneu by redux
+    // const dispatch = useDispatch()
+    // const postList = useSelector( state => state.post.postList )
+    // useEffect(() =>{
+    //       dispatch(fetchPosts()) 
+    //  })
+    // get menu by axios
     const[ navbar , setNavbar] = useState('navbar')
     const navbarHandler = () => {
         setNavbar('navbar show')

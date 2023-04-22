@@ -1,4 +1,13 @@
+import "./ShoppingCart.scss"
+import { useState } from "react";
 const ShoppingCart = () => {
+    const [prime , setPrime] = useState('loan')
+    const toggleHandler =  () =>{
+       if(prime === 'loan'){
+            setPrime('cash')
+       }
+    }
+    
     return ( 
         <div className="shoppingCart">
             <div className="title">
@@ -23,13 +32,35 @@ const ShoppingCart = () => {
                         </ul>
                     </div>
                     <div className="details-info">
-
+                         <ul>
+                            <li>
+                                Place for product image
+                            </li>
+                            <li>
+                                product name
+                            </li>
+                            <li>
+                                Price
+                            </li>
+                            <li>
+                                Total
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div className="prize">
-                 <div className="details-head">
-                    </div>
-                    <div className="details-info">
+                <div className="price">
+                 <div className="price-head">
+                    <span className="price-head-btn prime" onClick={toggleHandler}>cash</span>
+                    <span className="price-head-btn second" onClick={toggleHandler}>loan</span>
+                 </div>
+                 <div className="price-info">
+                    {prime==='loan' ? <div className="loan">
+                    <ul>
+                        <li><input type="checkbox"/><h6>3 months</h6> <span> - 10% intersts</span></li>
+                        <li><input type="checkbox"/><h6>6 months</h6> <span> - 10% intersts</span></li>
+                        <li><input type="checkbox"/><h6>12 months</h6> <span> - 10% intersts</span></li>
+                        <span>Proceed to Check Out</span>
+                    </ul></div> : <div></div>}
                  </div>
                 </div>
             </div>
