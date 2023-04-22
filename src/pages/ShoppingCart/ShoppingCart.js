@@ -5,6 +5,8 @@ const ShoppingCart = () => {
     const toggleHandler =  () =>{
        if(prime === 'loan'){
             setPrime('cash')
+       }else{
+        setPrime('loan')
        }
     }
     
@@ -60,7 +62,7 @@ const ShoppingCart = () => {
                         <li><input type="checkbox"/><h6>6 months</h6> <span> - 10% intersts</span></li>
                         <li><input type="checkbox"/><h6>12 months</h6> <span> - 10% intersts</span></li>
                         <span>Proceed to Check Out</span>
-                    </ul></div> : <div></div>}
+                    </ul></div> : <div className="cash">price : need help</div>}
                  </div>
                 </div>
             </div>
