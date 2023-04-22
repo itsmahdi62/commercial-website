@@ -82,6 +82,9 @@
                         background-color: var(--primaryColor);
                         color: var(--whiteColor);
                     }
+                    span{
+                        cursor: pointer;
+                    }
                 }
                 &-info{
                     background-color: var(--textColor1);
@@ -120,6 +123,9 @@
                                 line-height: 19px;
                                 color: var(--textColor1);
                                 background-color: #FD6644;
+                                &:hover{
+                                    cursor: pointer;
+                                }
                             }
                         }
                     }

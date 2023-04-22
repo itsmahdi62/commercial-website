@@ -24,17 +24,24 @@ const Home = () => {
     useEffect(() =>{
           dispatch(fetchPosts()) 
      })
-    // const [data,setData] = useState([]);    
-    // useEffect( ()=>{
-    //     axios({
-    //         method:"GET",
-    //         url: 'https://fakestoreapi.com/products'
-    //     }).then(response =>{
-    //         setData(response.data)
-    //         console.log(response.data)
-    //     }).catch(e=>console.log(e))
-        
-    // })
+
+        const [data , setData] = useState([]);    
+        useEffect( ()=>{
+            axios({
+                method:"GET",
+                url: `https://fakestoreapi.com/products?sort=${order}`
+            }).then(response =>{
+                setData(response.data)
+                console.log(response.data)
+            }).catch(e=>console.log(e))
+        })
+    const [order ,setOrder] = useState('')
+    const ascendingHandler = () =>{
+        setOrder('ask')
+    }
+    const descendingHandler = () =>{
+        setOrder('desc')
+    }
     return ( 
     <div className="home">
         <Navbar />
@@ -47,16 +54,28 @@ const Home = () => {
                     <HiSortDescending />
                     <span>sorting :</span>
                 </div>
-                <div className="ascending flex">
+                <div className="ascending flex" onClick={ascendingHandler}>
                     <span>Ascending</span>
                     <AiOutlineArrowUp />
                 </div>
-                <div className="descending flex">
+                <div className="descending flex" onClick={descendingHandler}>
                     <span>Descending</span>
                     <AiOutlineArrowDown />
                 </div>
             </div>
-        <div className="products flex">
+        { order ?  <div className="products flex">{
+                data.map((item) =>{
+                    return ( <Product 
+                        key={item.id}
+                        title={item.title}
+                        description={item.description}
+                        price={item.price}
+                        point={item.point}
+                        img={item.image}
+                    />)
+                })
+           }
+           </div>  :  <div className="products flex">
            {
                 postList.map((item) =>{
                     return ( <Product 
@@ -69,7 +88,7 @@ const Home = () => {
                     />)
                 })
            }
-        </div>
+        </div>} 
     </div>  );
 }
  

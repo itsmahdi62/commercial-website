@@ -64,6 +64,9 @@
                 font-size: 20px;
                 font-weight: 500;
                 margin: 0 2rem;
+                .links{
+                 color: black;
+                }
                 &:hover{
                     padding-bottom: 10px;
                     border-bottom: 2px solid var(--primaryColor);
@@ -85,8 +88,7 @@
             cursor: pointer;
             display: flex;
             .link{
-            color: var(--whiteColor);
-                
+                color: var(--whiteColor);
             }
             span{
                 margin-left: 0.5rem;

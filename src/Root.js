@@ -17,7 +17,7 @@ import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 
 const Root =()  =>{
   return (
-    <Provider  store={store}>
+    <Provider store={store}>
       <div>
       <BrowserRouter>
         <Navbar />

@@ -51,7 +51,7 @@ const Navbar = () => {
      <div className={navbar}>
         <ul className="menu">
         {data.map((product, index) =>{
-                return <li key={product.id}  onClick={<Category type={data[index]} />} ><Link to="/#" className='link'>{data[index]}</Link></li>
+                return <li key={product.id}  onClick={<Category type={data[index]} />} ><Link to="/#" className='links'>{data[index]}</Link></li>
         })}
         </ul>
         {/*=============================== add icons to navbar for exit ============================== */}
