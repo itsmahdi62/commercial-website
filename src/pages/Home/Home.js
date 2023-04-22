@@ -4,6 +4,10 @@ import axios from "axios"
 // ============== import hooks ==========
 import { useState , useEffect } from "react"
 
+// ========== import redux hooks 
+import { useDispatch, useSelector } from "react-redux";
+import {fetchPosts} from '../postSlice'
+
 //================ import images ===========
 import banner from "../../assets/banner.png"
 
@@ -15,22 +19,22 @@ import {AiOutlineArrowDown} from "react-icons/ai"
 import Navbar from '../../components/Navbar/Navbar'
 const Home = () => {
 
-    
-
-
-
-
-    const [data,setData] = useState([]);    
-    useEffect( ()=>{
-        axios({
-            method:"GET",
-            url: 'https://fakestoreapi.com/products'
-        }).then(response =>{
-            setData(response.data)
-            console.log(response.data)
-        }).catch(e=>console.log(e))
+    const dispatch = useDispatch()
+    const postList = useSelector( state => state.post.postList )
+    useEffect(() =>{
+          dispatch(fetchPosts()) 
+     })
+    // const [data,setData] = useState([]);    
+    // useEffect( ()=>{
+    //     axios({
+    //         method:"GET",
+    //         url: 'https://fakestoreapi.com/products'
+    //     }).then(response =>{
+    //         setData(response.data)
+    //         console.log(response.data)
+    //     }).catch(e=>console.log(e))
         
-    })
+    // })
     return ( 
     <div className="home">
         <Navbar />
@@ -54,7 +58,7 @@ const Home = () => {
             </div>
         <div className="products flex">
            {
-                data.map((item) =>{
+                postList.map((item) =>{
                     return ( <Product 
                         key={item.id}
                         title={item.title}

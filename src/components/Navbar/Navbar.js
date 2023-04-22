@@ -54,7 +54,7 @@ const Navbar = () => {
             </Link>
         </div>
         <div className='bagContainer'>
-            <BiShoppingBag  className='bag'/>
+            <Link to='/ShoppingCart'><BiShoppingBag  className='bag'/></Link> 
         </div>
      </div>
     </div> );

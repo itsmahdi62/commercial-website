@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./AddProduct.scss"
 const AddProduct = () => {
     return ( 
@@ -29,7 +30,7 @@ const AddProduct = () => {
                         <input type="password"/>
                     </div>
                     <div className="btn-form">
-                        <button className="cancel">Cancel</button>
+                        <Link to='/' className="d"><span className="cancel">Cancel</span></Link>
                         <button className="addBtn">Add Product</button>
                     </div>
                 </div>
