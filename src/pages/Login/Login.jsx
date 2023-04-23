@@ -6,13 +6,15 @@ import logo1 from "../../assets/Group 2.png"
 import { useState } from 'react';
 import Loading from "../../UI/Loading/Loading";
 import {useNavigate} from 'react-router-dom'
-const Login = ({token ,setToken}) => {
+const Login = (token , setToken) => {
+  // const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
 
     const navigate = useNavigate() ;
     const [username , setUsername] = useState("");
     const [password , setPassword] = useState("");
     const [error , setError] = useState("");
     const [loading , setLoading] = useState(false)
+
     const loginHandler = () =>{
       setError("");
       setPassword("");
@@ -29,13 +31,15 @@ const Login = ({token ,setToken}) => {
             console.log(response.data.token)
             setToken(response.data.token)
             setLoading(false)
-            navigate('/')
-           
             localStorage.setItem("userToken",response.data.token)
         }).catch((err) =>{
             console.log(err.response.data)
             setError(err.response.data)
+            setLoading(false)
         })
+        if(token){
+          navigate('/home')
+        }
   }
   const modalCloseHandler = () =>{
     setLoading(false)

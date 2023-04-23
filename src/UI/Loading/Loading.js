@@ -1,7 +1,7 @@
 import * as React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import { Backdrop } from '../Backdrop/Backdrop';
+import Backdrop  from '../Backdrop/Backdrop';
 import Wrapper from "../../components/hoc/Wrapper"
 import "./Loading.scss"
 const CircularIndeterminate = (props) => {

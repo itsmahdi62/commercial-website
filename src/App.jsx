@@ -10,26 +10,21 @@ import Login from './pages/Login/Login'
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Payment from './pages/Payment/Payment';
 const App =()  =>{
-
-  // container of roots
   const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
   return (
     <div>
-    {/* ================== test bench ===================== */}
-        {/* <Root /> */}
-      {/* {token && <Login token={token} setToken={setToken}/>} */}
-    {/* ================== test bench ===================== */}
-      {/* {token ? <Root /> : <Login token={token} setToken={setToken}/> } */}
        <Provider store={store}>
       <div>
       <BrowserRouter>
        <div className="App">
         <main>
           <Routes>
-            {/* <Route path="/" element={<Navigate replace to="/login" />}/>
-            <Route path="/" element={<Home />}/> */}
-            <Route exact path="/"   element={token ? <Home/> : <Login />}/>
-            <Route path='/login' element={<Login token={token} setToken={setToken}/>} /> 
+            <Route path="/" element={<Login token={token} setToken={setToken} />}/>
+            {/* <Route path="/" element={<Home />}/> */}
+            {/* <Route  path="/"   element={token ? <Home/> : <Login />}/> */}
+            {/* <Route path='/' element={token ? <Home /> : <Login token={token} setToken={setToken}/>} /> */}
+            {/* <Route path="/login" element={token ? <Navigate replace to="/"/> : <Login token={token} setToken={setToken} />}/> */}
+            <Route path="/home" element={<Home />}/>
             <Route path="/AddProduct" element={<AddProduct />}/>
             <Route path='/shoppingCart' element={<ShoppingCart/>} />
             <Route path='shoppingCart/payment' element={<Payment />} />

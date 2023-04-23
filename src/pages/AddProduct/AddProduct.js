@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import ModalAddProduct from "../../UI/ModalAddProduct/ModalAddProduct";
+import Loading from "../../UI/Loading/Loading";
 const AddProduct = () => {
 
     const [title , setTitle] = useState("");
@@ -13,7 +14,9 @@ const AddProduct = () => {
     const [category,setCategory] = useState('')
     const [error , setError] = useState("");
     const[ modal ,setModal] = useState(false)
+    const [loading , setLoading] = useState(false)
     const addProductHandler = () =>{
+        setLoading(true)
         setError("");
         setTitle("")
         setImg("")
@@ -31,6 +34,7 @@ const AddProduct = () => {
                 category: category
               },
           }).then(response =>{
+            setLoading(false)
               
           }).catch((err) =>{
               console.log(err.response.data)
@@ -40,6 +44,7 @@ const AddProduct = () => {
   }
     const modalCloseHandler =() =>{
         setModal(false)
+        setLoading(false)
     }
     return ( 
         <div className="add">
@@ -79,6 +84,7 @@ const AddProduct = () => {
                 </div>
             </div>
             {modal && <ModalAddProduct modalClose={modalCloseHandler} img={img} title={title} description={description} price={price}/>}
+            {loading && <Loading modalClose={modalCloseHandler} />}
         </div>
      );
 }

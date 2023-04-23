@@ -14,11 +14,14 @@
     z-index: 1000;
     border-radius: 10px;
     margin: 0 50% 0 0;
-    width: 30%;
+    width:  30%;
+    height: 8rem;
     left: 38%;
     top:25%;
     transition: all 0.3s ease-out;
     padding: 16px;
     display: flex;
-    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
 }

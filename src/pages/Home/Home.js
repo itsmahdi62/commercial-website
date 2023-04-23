@@ -18,6 +18,7 @@ import {AiOutlineArrowDown} from "react-icons/ai"
 
 import Navbar from '../../components/Navbar/Navbar'
 import ModalProduct from "../../UI/ModalProduct/ModalProduct";
+
 const Home = () => {
     // ================= get product using redux ======================
     const dispatch = useDispatch()
@@ -27,7 +28,8 @@ const Home = () => {
      })
      // ===========================
      //====================sort products handler ======================
-        const [data , setData] = useState([]);    
+        const [data , setData] = useState([]); 
+           
         useEffect( ()=>{
             axios({
                 method:"GET",
@@ -44,6 +46,7 @@ const Home = () => {
     const descendingHandler = () =>{
         setOrder('desc')
     }
+    
     // ===================================
     // ================== show modal ======================
     const [modal ,setModal] = useState(false)
