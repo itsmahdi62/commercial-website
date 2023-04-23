@@ -10,18 +10,9 @@ import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import axios from 'axios';
 
-//=========== import redux tools 
-import { useDispatch, useSelector } from "react-redux";
-import {fetchPosts} from '../../postSlice'
 
-import Category from '../Category/Category';
+
 const Navbar = () => {
-    // //======== get mneu by redux
-    // const dispatch = useDispatch()
-    // const postList = useSelector( state => state.post.postList )
-    // useEffect(() =>{
-    //       dispatch(fetchPosts()) 
-    //  })
     // get menu by axios
     const[ navbar , setNavbar] = useState('navbar')
     const navbarHandler = () => {
@@ -50,21 +41,24 @@ const Navbar = () => {
      <div className={navbar}>
         <ul className="menu">
         {data.map((product, index) =>{
-                return <li key={product.id}  onClick={<Category type={data[index]} />} ><Link to="/#" className='links'>{data[index]}</Link></li>
+                {/* return <li key={product.id}  onClick={()=>props.categoryHandler(product.index)} ><Link to="/#" className='links'>{data[index]}</Link></li> */}
+                return <li key={product.id} ><Link to="/#" className='links'>{data[index]}</Link></li>
         })}
         </ul>
         {/*=============================== add icons to navbar for exit ============================== */}
      </div>
      <div className='products'>
-        <div className='text'>
-            <Link to='/AddProduct' className='link'>
+        <Link to='/AddProduct' className='link'>
+            <div className='text' style={{color:'white'}}>    
                 <AiOutlinePlusCircle className='plus'/>
                 <span>Add product</span>
-            </Link>
-        </div>
-        <div className='bagContainer'>
-            <Link to='/ShoppingCart'><BiShoppingBag  className='bag' /></Link> 
-        </div>
+            </div>
+        </Link>
+        <Link to='/ShoppingCart'>
+            <div className='bagContainer'>
+                <BiShoppingBag  className='bag' />
+            </div>
+        </Link> 
      </div>
     </div> );
 }
