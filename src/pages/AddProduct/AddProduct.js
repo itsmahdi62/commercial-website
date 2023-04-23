@@ -22,11 +22,11 @@ const AddProduct = () => {
             url:"https://fakestoreapi.com/products",
             data:{
                 id: Math.random(),
-                title: "test product",
-                price: 13.5,
-                description: "lorem ipsum set",
-                image: "https://i.pravatar.cc",
-                category: "electronic"
+                title: title,
+                price: price,
+                description: description,
+                image: img,
+                category: category
               },
           }).then(response =>{
               

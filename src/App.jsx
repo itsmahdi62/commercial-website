@@ -10,6 +10,7 @@ import Login from './pages/Login/Login'
 import Root from "./Root"
 import Navbar from './components/Navbar/Navbar';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
+import Payment from './pages/Payment/Payment';
 const App =()  =>{
   
 
@@ -49,7 +50,8 @@ const App =()  =>{
             <Route path="/" element={<Home />}/>
             <Route path="/AddProduct" element={<AddProduct />}/>
             <Route path='/shoppingCart' element={<ShoppingCart/>} />
-          </Routes>
+            <Route path='ShoppingCart/payment' element={<Payment />} />
+            </Routes>
         </main>
        </div>
       </BrowserRouter>

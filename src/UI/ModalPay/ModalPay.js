@@ -1,8 +1,12 @@
-const ModalPay = () => {
+import Backdrop from "../Backdrop/Backdrop"
+import Wrapper from "../../components/hoc/Wrapper"
+const ModalPay = (props) => {
     return ( 
-        <div>
-            
+       <Wrapper >
+       <Backdrop click={props.modalClose}/>
+         <div className="modalPay">
         </div>
+       </Wrapper>
      );
 }
  

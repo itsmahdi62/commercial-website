@@ -63,7 +63,7 @@ const Navbar = () => {
             </Link>
         </div>
         <div className='bagContainer'>
-            <Link to='/ShoppingCart'><BiShoppingBag  className='bag'/></Link> 
+            <Link to='/ShoppingCart'><BiShoppingBag  className='bag' /></Link> 
         </div>
      </div>
     </div> );

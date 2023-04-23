@@ -1,8 +1,13 @@
-const ModalAddProduct = () => {
+import Backdrop from "../Backdrop/Backdrop"
+import Wrapper from "../../components/hoc/Wrapper"
+const ModalAddProduct = (props) => {
     return ( 
-        <div>
-
-        </div> );
+       <Wrapper >
+       <Backdrop click={props.modalClose}/>
+         <div className="modalProduct">
+        </div>
+       </Wrapper>
+     );
 }
  
 export default ModalAddProduct;
