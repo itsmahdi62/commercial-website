@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Payment.scss"
 import { useState } from "react";
 import axios from "axios";
+import ModalPay from "../../UI/ModalPay/ModalPay";
 const AddProduct = () => {
 
     const [card , setCard] = useState("");
@@ -10,7 +11,7 @@ const AddProduct = () => {
     const [month,setMonth] = useState('');
     const [pass,setPass] = useState('')
     const [error , setError] = useState("");
-   
+    const [modal ,setModal] = useState(false)
     const payHandler = () =>{
         // setError("");
         // setCard("")
@@ -34,7 +35,11 @@ const AddProduct = () => {
         //       console.log(err.response.data)
         //       setError(err.response.data)
         //   })
+        setModal(true)
   }
+  const modalCloseHandler =() =>{
+    setModal(false)
+}
       
     return ( 
         <div className="add">
@@ -70,6 +75,7 @@ const AddProduct = () => {
                     </div>
                 </div>
             </div>
+            {modal && <ModalPay modalClose={modalCloseHandler}/>}
         </div>
      );
 }

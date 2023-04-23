@@ -12,7 +12,6 @@ import Navbar from './components/Navbar/Navbar';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Payment from './pages/Payment/Payment';
 const App =()  =>{
-  
 
   // container of roots
   let root = (<Provider store={store}>
@@ -51,7 +50,7 @@ const App =()  =>{
             <Route path="/AddProduct" element={<AddProduct />}/>
             <Route path='/shoppingCart' element={<ShoppingCart/>} />
             <Route path='ShoppingCart/payment' element={<Payment />} />
-            </Routes>
+          </Routes>
         </main>
        </div>
       </BrowserRouter>

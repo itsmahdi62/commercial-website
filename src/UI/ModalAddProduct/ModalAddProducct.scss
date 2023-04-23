@@ -1,0 +1,25 @@
+:root{
+    --primaryColor:#6F11E1;
+    --secondryColor:  #4f3fa1;
+    --textColor: #a3a3a3;
+    --greyColor:#f4f4f4;
+    --whiteColor:#FFFFFF;
+    --blackColor:#404040;
+    --backColor: #E4E4E4;
+    --modalsecondColor: #E8FFE4;
+    --modalprimeColor: #1BAC03;
+}
+.modalProduct{
+    position: fixed;
+    z-index: 1000;
+    border-radius: 10px;
+    border: 10px solid fuchsia;
+    margin: 0 50% 0 0;
+    width: 30%;
+    left: 38%;
+    top:25%;
+    transition: all 0.3s ease-out;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
