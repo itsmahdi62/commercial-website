@@ -9,7 +9,6 @@ import {useNavigate} from 'react-router-dom'
 const Login = ({token ,setToken}) => {
 
     const navigate = useNavigate() ;
-  
     const [username , setUsername] = useState("");
     const [password , setPassword] = useState("");
     const [error , setError] = useState("");
@@ -31,12 +30,15 @@ const Login = ({token ,setToken}) => {
             setToken(response.data.token)
             setLoading(false)
             navigate('/')
-
+           
             localStorage.setItem("userToken",response.data.token)
         }).catch((err) =>{
             console.log(err.response.data)
             setError(err.response.data)
         })
+  }
+  const modalCloseHandler = () =>{
+    setLoading(false)
   }
 
   return (
@@ -72,6 +74,7 @@ const Login = ({token ,setToken}) => {
               </div>
           </div>
       </div>
+      {loading && <Loading modalClose={modalCloseHandler} />}
     </div>
   );
 }

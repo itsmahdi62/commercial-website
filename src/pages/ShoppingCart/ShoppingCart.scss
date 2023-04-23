@@ -126,6 +126,16 @@
                                 &:hover{
                                     cursor: pointer;
                                 }
+                                .proceed{
+                                    margin-top: 0.5rem;
+                                    padding: 1rem;
+                                    border-radius: 5px;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: var(--textColor1);
+                                    background-color: #FD6644;
+                                }
                             }
                         }
                     }

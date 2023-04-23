@@ -11,7 +11,6 @@ const ShoppingCart = () => {
         setPrime('loan')
        }
     }
-    
     return ( 
         <div className="shoppingCart">
         <div className="navbarBox">
@@ -66,7 +65,7 @@ const ShoppingCart = () => {
                         <li><input type="checkbox"/><h6>3 months</h6> <span> - 10% intersts</span></li>
                         <li><input type="checkbox"/><h6>6 months</h6> <span> - 10% intersts</span></li>
                         <li><input type="checkbox"/><h6>12 months</h6> <span> - 10% intersts</span></li>
-                        <Link to='Shopping/payment'><span>Proceed to Check Out</span></Link>
+                        <Link to='/payment' className="proceed"><span >Proceed to Check Out</span></Link>
                     </ul></div> : <div className="cash">price : need help</div>}
                  </div>
                 </div>

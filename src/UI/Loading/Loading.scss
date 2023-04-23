@@ -9,11 +9,10 @@
     --modalsecondColor: #E8FFE4;
     --modalprimeColor: #1BAC03;
 }
-.modalPay{
+.loadBox{
     position: fixed;
     z-index: 1000;
     border-radius: 10px;
-    border: 10px solid fuchsia;
     margin: 0 50% 0 0;
     width: 30%;
     left: 38%;
@@ -22,31 +21,4 @@
     padding: 16px;
     display: flex;
     flex-direction: column;
-    .checkbox{
-        background-color: var(--modalsecondColor);
-        text-align: center;
-        color: var(--modalprimeColor);
-        border-bottom: 0.3px solid var(--blackColor) ;
-        padding: 0.75rem 0.5rem;
-
-        .check{
-            font-size: 1.7rem ;
-            margin-bottom: 2rem;
-        }
-        p{
-            font-size:20px ;
-            font-weight: 500;
-        }
-    }
-    .Card-info{
-        background-color: var(--modalsecondColor);
-        text-align: center;
-        button{
-            color: white;
-            border: none;
-            margin-top: 2rem;
-            background-color: var(--modalprimeColor);
-            padding: 1rem;
-        }
-    }
 }
