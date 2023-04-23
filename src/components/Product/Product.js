@@ -5,7 +5,7 @@ import "./Product.scss"
 
 const Product = (props) => {
     return ( 
-        <div className='product' onClick={props.modalHandler}>
+        <div className='product' onClick={() => props.modalHandler(props.id)}>
             <div className='imgDivs'>
             <img src={props.img} alt="" />
             </div>

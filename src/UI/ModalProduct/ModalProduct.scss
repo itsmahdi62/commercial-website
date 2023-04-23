@@ -7,28 +7,32 @@
     --blackColor:#404040;
     --backColor: #E4E4E4;
 }
-
-.main{
+.modalProduct{
+    position: fixed;
     z-index: 1000;
     border-radius: 10px;
-    border: 10px solid red;
-    display: grid;
-    flex-direction: column;
-    position: absolute;
-    top:50%;
+    border: 10px solid fuchsia;
     margin: 0 50% 0 0;
-    .header{
+    width: 30%;
+    left: 38%;
+    top:25%;
+    transition: all 0.3s ease-out;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    .headerProductModal{
         background-color: var(--backColor);
         display: flex;
+        padding: 1rem 2rem;
+        align-items: center;
         justify-content: space-between;
-        width: 50%;
     }
     .pro{
         display: flex;
         border: 10px solid red;
         justify-content: center;
         align-items: center;
-
+        background-color: white;
 
         .information{
             h4{

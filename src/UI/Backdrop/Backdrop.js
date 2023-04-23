@@ -1,7 +1,7 @@
 import "./Backdrop.scss"
-const Backdrop = () => {
+const Backdrop = (props) => {
     return ( 
-        <div className="backdrop">
+        <div className="backdrop" onClick={props.click}>
 
         </div>
      );

@@ -19,14 +19,14 @@ import {AiOutlineArrowDown} from "react-icons/ai"
 import Navbar from '../../components/Navbar/Navbar'
 import ModalProduct from "../../UI/ModalProduct/ModalProduct";
 const Home = () => {
-    // ================= get product using redux
+    // ================= get product using redux ======================
     const dispatch = useDispatch()
     const postList = useSelector( state => state.post.postList )
     useEffect(() =>{
           dispatch(fetchPosts()) 
      })
      // ===========================
-     //====================sort products handler
+     //====================sort products handler ======================
         const [data , setData] = useState([]);    
         useEffect( ()=>{
             axios({
@@ -34,7 +34,7 @@ const Home = () => {
                 url: `https://fakestoreapi.com/products?sort=${order}`
             }).then(response =>{
                 setData(response.data)
-                console.log(response.data)
+                // console.log(response.data)
             }).catch(e=>console.log(e))
         })
     const [order ,setOrder] = useState('')
@@ -45,9 +45,17 @@ const Home = () => {
         setOrder('desc')
     }
     // ===================================
+    // ================== show modal ======================
     const [modal ,setModal] = useState(false)
-    const modalHandler = () =>{
-        setModal(true)
+    let specialproduct = 0 ;
+    const modalHandler = (id) =>{
+        setModal(true)        
+        specialproduct = data.find(item => item.id === id )
+    }
+    // ==================================
+    //============================ close modal ======================
+    const modalCloseHandler =() =>{
+        setModal(false)
     }
     return ( 
     <div className="home">
@@ -79,7 +87,9 @@ const Home = () => {
                         price={item.price}
                         point={item.point}
                         img={item.image}
+                        // modalHandler={() => modalHandler(specialproduct)}
                         modalHandler={modalHandler}
+
                     />)
                 })
            }
@@ -98,7 +108,7 @@ const Home = () => {
                 })
            }
         </div>} 
-        {modal && <ModalProduct />}
+        {modal && <ModalProduct modalClose={modalCloseHandler}/>}
     </div>  );
 }
  

@@ -38,8 +38,6 @@ const App =()  =>{
         {/* <Root /> */}
       {/* {token && <Login token={token} setToken={setToken}/>} */}
     {/* ================== test bench ===================== */}
-
-    
       {/* {token ? root : <Login token={token} setToken={setToken}/> } */}
        <Provider store={store}>
       <div>

@@ -11,7 +11,7 @@ const Category = (props) => {
             url: 'https://fakestoreapi.com/products'
         }).then(response =>{
             setData(response.data)
-            console.log(response.data)
+            // console.log(response.data)
         }).catch(e=>console.log(e))
         
     })

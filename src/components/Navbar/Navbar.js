@@ -35,7 +35,6 @@ const Navbar = () => {
             url: 'https://fakestoreapi.com/products/categories'
         }).then(response =>{
             setData(response.data)
-            console.log(response.data)
         }).catch(e=>console.log(e))
         
     })
