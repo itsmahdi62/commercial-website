@@ -42,8 +42,6 @@ const Home = () => {
     const descendingHandler = () =>{
         setOrder('desc')
     }
-    
-    
     // ================== show modal ======================
     const [modal ,setModal] = useState(false)
     let specialproduct = 0 ;
@@ -55,39 +53,7 @@ const Home = () => {
     const modalCloseHandler =() =>{
         setModal(false)
     }
-    const divDataOrder = (  <div className="products flex">{
-        data.map((item) =>{
-            return ( <Product 
-                key={item.id}
-                title={item.title}
-                description={item.description}
-                price={item.price}
-                point={item.point}
-                img={item.image}
-                // modalHandler={() => modalHandler(specialproduct)}
-                modalHandler={modalHandler}
-            />)
-        })
-   }
-    </div>)
-
-    const divDefaultRedux = <div className="products flex">
-    {
-         postList.map((item) =>{
-             return ( <Product 
-                 key={item.id}
-                 title={item.title}
-                 description={item.description}
-                 price={item.price}
-                 point={item.point}
-                 img={item.image}
-                 modalHandler={modalHandler}
-             />)
-         })
-    }
-    </div>
-
-    const [showByOrder, setShowByOrder] = useState(true)
+    // const [showByOrder, setShowByOrder] = useState(true)
     // const categoryHandler = (cat) => {
 
     // }
@@ -98,7 +64,6 @@ const Home = () => {
         <div className="banner">
             <img src={banner} alt="" />
         </div>
-
         <div className="sortSection">
                 <div className="sorting  flex">
                     <HiSortDescending />
@@ -113,7 +78,36 @@ const Home = () => {
                     <AiOutlineArrowDown />
                 </div>
             </div>
-        { order ? {divDataOrder}  :  {divDefaultRedux}} 
+        { order ?  <div className="products flex">{
+        data.map((item) =>{
+            return ( <Product 
+                key={item.id}
+                title={item.title}
+                description={item.description}
+                price={item.price}
+                point={item.point}
+                img={item.image}
+                // modalHandler={() => modalHandler(specialproduct)}
+                modalHandler={modalHandler}
+            />)
+        })
+   }
+    </div>  :  
+    <div className="products flex">
+    {
+         postList.map((item) =>{
+             return ( <Product 
+                 key={item.id}
+                 title={item.title}
+                 description={item.description}
+                 price={item.price}
+                 point={item.point}
+                 img={item.image}
+                 modalHandler={modalHandler}
+             />)
+         })
+    }
+    </div>} 
         {modal && <ModalProduct modalClose={modalCloseHandler}/>}
     </div>  );
 }

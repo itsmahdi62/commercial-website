@@ -41,7 +41,6 @@ const Navbar = () => {
      <div className={navbar}>
         <ul className="menu">
         {data.map((product, index) =>{
-                {/* return <li key={product.id}  onClick={()=>props.categoryHandler(product.index)} ><Link to="/#" className='links'>{data[index]}</Link></li> */}
                 return <li key={product.id} ><Link to="/#" className='links'>{data[index]}</Link></li>
         })}
         </ul>
