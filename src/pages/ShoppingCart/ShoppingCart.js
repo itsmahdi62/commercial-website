@@ -1,6 +1,7 @@
 import "./ShoppingCart.scss"
 import { Link , Route ,Routes} from "react-router-dom";
 import { useState } from "react";
+import Navbar from "../../components/Navbar/Navbar";
 const ShoppingCart = () => {
     const [prime , setPrime] = useState('loan')
     const toggleHandler =  () =>{
@@ -13,6 +14,9 @@ const ShoppingCart = () => {
     
     return ( 
         <div className="shoppingCart">
+        <div className="navbarBox">
+            <Navbar />
+        </div>
             <div className="title">
                 <h4>Shopping Cart</h4>
             </div>
@@ -62,7 +66,7 @@ const ShoppingCart = () => {
                         <li><input type="checkbox"/><h6>3 months</h6> <span> - 10% intersts</span></li>
                         <li><input type="checkbox"/><h6>6 months</h6> <span> - 10% intersts</span></li>
                         <li><input type="checkbox"/><h6>12 months</h6> <span> - 10% intersts</span></li>
-                        <Link to='payment'><span>Proceed to Check Out</span></Link>
+                        <Link to='Shopping/payment'><span>Proceed to Check Out</span></Link>
                     </ul></div> : <div className="cash">price : need help</div>}
                  </div>
                 </div>

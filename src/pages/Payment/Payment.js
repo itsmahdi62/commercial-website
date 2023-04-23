@@ -3,6 +3,7 @@ import "./Payment.scss"
 import { useState } from "react";
 import axios from "axios";
 import ModalPay from "../../UI/ModalPay/ModalPay";
+import Navbar from "../../components/Navbar/Navbar";
 const Payment = () => {
 
     const [card , setCard] = useState("");
@@ -43,6 +44,9 @@ const Payment = () => {
       
     return ( 
         <div className="add">
+        <div className="navbarBox">
+            <Navbar />
+        </div>
             <p>lorem is a dangerous s animal lorem is aanimal lorem is a dangerous animal lorem is a dangerous animal</p>
             <div className="add-box">
                 <div className="head">

@@ -1,0 +1,60 @@
+:root{
+    --primaryColor:#6F11E1;
+    --secondryColor:  #4f3fa1;
+    --textColor: #a3a3a3;
+    --greyColor:#f4f4f4;
+    --whiteColor:#FFFFFF;
+    --blackColor:#404040;
+    --backColor: #E4E4E4;
+    --modalsecondColor: #E8FFE4;
+    --modalprimeColor: #1BAC03;
+}
+.modalAdd{
+    position: fixed;
+    z-index: 1000;
+    border-radius: 10px;
+    margin: 0 50% 0 0;
+    width: 30%;
+    left: 38%;
+    top:25%;
+    transition: all 0.3s ease-out;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    .checkbox{
+        background-color: var(--modalsecondColor);
+        text-align: center;
+        color: var(--modalprimeColor);
+        border-bottom: 0.3px solid var(--blackColor) ;
+        padding: 0.75rem 0.5rem;
+
+        .check{
+            font-size: 1.7rem ;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        p{
+            font-size:20px ;
+            font-weight: 500;
+        }
+    }
+    .add-info{
+        background-color: var(--modalsecondColor);
+        text-align: center;
+        display: flex;
+        .img{
+            color: white;
+            border: none;
+            padding: 1rem;
+        }
+        .details{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+            &>*{
+                margin-top: 0.5rem 0;
+            }
+        }
+    }
+}

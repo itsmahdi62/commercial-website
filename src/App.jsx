@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import Home from './pages/Home/Home.js'
 import AddProduct from './pages/AddProduct/AddProduct';
 import Login from './pages/Login/Login'
-import Navbar from './components/Navbar/Navbar';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Payment from './pages/Payment/Payment';
 const App =()  =>{
@@ -33,7 +32,7 @@ const App =()  =>{
             <Route path='/login' element={<Login token={token} setToken={setToken}/>} /> 
             <Route path="/AddProduct" element={<AddProduct />}/>
             <Route path='/shoppingCart' element={<ShoppingCart/>} />
-            <Route path='/payment' element={<Payment />} />
+            <Route path='shoppingCart/payment' element={<Payment />} />
           </Routes>
         </main>
        </div>

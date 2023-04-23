@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./AddProduct.scss"
 import { useState } from "react";
 import axios from "axios";
+import Navbar from "../../components/Navbar/Navbar";
+import ModalAddProduct from "../../UI/ModalAddProduct/ModalAddProduct";
 const AddProduct = () => {
 
     const [title , setTitle] = useState("");
@@ -10,7 +12,7 @@ const AddProduct = () => {
     const [price,setPrice] = useState('');
     const [category,setCategory] = useState('')
     const [error , setError] = useState("");
-   
+    const[ modal ,setModal] = useState(false)
     const addProductHandler = () =>{
         setError("");
         setTitle("")
@@ -34,11 +36,16 @@ const AddProduct = () => {
               console.log(err.response.data)
               setError(err.response.data)
           })
-    
+        setModal(true)
   }
-      
+    const modalCloseHandler =() =>{
+        setModal(false)
+    }
     return ( 
         <div className="add">
+         <div className="navbarBox">
+            <Navbar />
+        </div>
             <p>lorem is a dangerous s animal lorem is aanimal lorem is a dangerous animal lorem is a dangerous animal</p>
             <div className="add-box">
                 <div className="head">
@@ -71,6 +78,7 @@ const AddProduct = () => {
                     </div>
                 </div>
             </div>
+            {modal && <ModalAddProduct modalClose={modalCloseHandler} img={img} title={title} description={description} price={price}/>}
         </div>
      );
 }
