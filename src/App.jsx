@@ -12,6 +12,8 @@ import Navbar from './components/Navbar/Navbar';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 const App =()  =>{
   
+
+  // container of roots
   let root = (<Provider store={store}>
     <div>
     <BrowserRouter>
@@ -34,9 +36,12 @@ const App =()  =>{
     <div>
     {/* ================== test bench ===================== */}
         {/* <Root /> */}
+      {/* {token && <Login token={token} setToken={setToken}/>} */}
     {/* ================== test bench ===================== */}
-      {token ? root : <Login token={token} setToken={setToken}/> }
-      {/*<Provider store={store}>
+
+    
+      {/* {token ? root : <Login token={token} setToken={setToken}/> } */}
+       <Provider store={store}>
       <div>
       <BrowserRouter>
         <Navbar />
@@ -51,7 +56,7 @@ const App =()  =>{
        </div>
       </BrowserRouter>
      </div>
-    </Provider> */}
+    </Provider> 
     </div>
    
   )

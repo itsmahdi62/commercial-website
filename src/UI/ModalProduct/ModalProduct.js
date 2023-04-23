@@ -1,10 +1,11 @@
-import "./ProductCard.scss"
+import "./ModalProduct.scss"
 import {AiOutlineStar} from "react-icons/ai"
 import { BiShoppingBag } from "react-icons/bi"
-
-const ProductCard = (props) => {
+import Backdrop from "../Backdrop/Backdrop"
+const ModalProduct = (props) => {
     return ( 
         <div className="main">
+             <Backdrop />
             <div className="header flex">
                 <h4>product details</h4>
                 <AiOutlineStar /> {props.point}
@@ -27,4 +28,4 @@ const ProductCard = (props) => {
      );
 }
  
-export default ProductCard;
+export default ModalProduct;
