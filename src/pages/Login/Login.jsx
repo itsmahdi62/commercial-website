@@ -4,14 +4,21 @@ import lock from "../../assets/downloadReceipt.png"
 import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import { useState } from 'react';
+import Loading from "../../UI/Loading/Loading";
+import {useNavigate} from 'react-router-dom'
 const Login = ({token ,setToken}) => {
+
+    const navigate = useNavigate() ;
+  
     const [username , setUsername] = useState("");
     const [password , setPassword] = useState("");
     const [error , setError] = useState("");
+    const [loading , setLoading] = useState(false)
     const loginHandler = () =>{
       setError("");
       setPassword("");
       setUsername("");
+      setLoading(true)
       axios({
           method:"POST",
           url:"https://fakestoreapi.com/auth/login",
@@ -22,6 +29,9 @@ const Login = ({token ,setToken}) => {
         }).then(response =>{
             console.log(response.data.token)
             setToken(response.data.token)
+            setLoading(false)
+            navigate('/')
+
             localStorage.setItem("userToken",response.data.token)
         }).catch((err) =>{
             console.log(err.response.data)
@@ -31,6 +41,8 @@ const Login = ({token ,setToken}) => {
 
   return (
     <div className="main"> 
+     
+     {loading && <Loading />} 
       <div className="login">
           <div className="imgDiv">
             <img src={lock} alt="" />

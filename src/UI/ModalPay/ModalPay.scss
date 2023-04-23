@@ -39,11 +39,14 @@
         }
     }
     .Card-info{
+        background-color: var(--modalsecondColor);
         text-align: center;
         button{
             color: white;
+            border: none;
+            margin-top: 2rem;
             background-color: var(--modalprimeColor);
-            padding 1reml
+            padding: 1rem;
         }
     }
 }

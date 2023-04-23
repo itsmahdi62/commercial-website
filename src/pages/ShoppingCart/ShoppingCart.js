@@ -1,5 +1,5 @@
 import "./ShoppingCart.scss"
-import { Link } from "react-router-dom";
+import { Link , Route ,Routes} from "react-router-dom";
 import { useState } from "react";
 const ShoppingCart = () => {
     const [prime , setPrime] = useState('loan')

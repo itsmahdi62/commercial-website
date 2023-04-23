@@ -3,7 +3,7 @@ import "./Payment.scss"
 import { useState } from "react";
 import axios from "axios";
 import ModalPay from "../../UI/ModalPay/ModalPay";
-const AddProduct = () => {
+const Payment = () => {
 
     const [card , setCard] = useState("");
     const [Cvv2,setCvv2] = useState('');
@@ -80,4 +80,4 @@ const AddProduct = () => {
      );
 }
  
-export default AddProduct;
+export default Payment;
