@@ -1,6 +1,6 @@
 import "./Home.scss"
+import Navbar from "../../components/Navbar/Navbar"
 import Product from "../../components/Product/Product"
-import Navbar from '../../components/Navbar/Navbar'
 import ModalProduct from "../../UI/ModalProduct/ModalProduct";
 import axios from "axios"
 
@@ -10,7 +10,7 @@ import { useState , useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import {fetchPosts} from '../../postSlice'
 
-//================ import images ===========
+//================ import images =======================
 import banner from "../../assets/banner.png"
 // ============== import icons ============
 import {HiSortDescending} from "react-icons/hi"
@@ -57,6 +57,8 @@ const Home = () => {
     // const categoryHandler = (cat) => {
 
     // }
+
+    //============================================ Return ============================
     return ( 
     <div className="home">
         {/* <Navbar category={categoryHandler}/> */}
@@ -87,7 +89,6 @@ const Home = () => {
                 price={item.price}
                 point={item.point}
                 img={item.image}
-                // modalHandler={() => modalHandler(specialproduct)}
                 modalHandler={modalHandler}
             />)
         })

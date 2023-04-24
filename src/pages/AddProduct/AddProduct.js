@@ -6,7 +6,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import ModalAddProduct from "../../UI/ModalAddProduct/ModalAddProduct";
 import Loading from "../../UI/Loading/Loading";
 const AddProduct = () => {
-
     const [title , setTitle] = useState("");
     const [description,setDescription] = useState('');
     const [img,setImg] = useState('');
