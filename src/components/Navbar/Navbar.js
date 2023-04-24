@@ -16,7 +16,7 @@ const Navbar = () => {
     // get menu by axios
     const[ navbar , setNavbar] = useState('navbar')
     const navbarHandler = () => {
-        setNavbar('navbar show')
+        setNavbar('show')
     }
     // getting lists order
     const [data , setData] = useState([])
@@ -32,7 +32,7 @@ const Navbar = () => {
     return (
          <div className='header' >
              <div className="logoDiv">
-                <TbGridDots className='mobile' onClick={navbarHandler}/>
+                <TbGridDots className='lines' onClick={navbarHandler}/>
                 <img src={logo1} alt="" className="logo logoBag" />
                 <img src={logo} alt="" className="logo logoText" />
              </div>
@@ -47,17 +47,17 @@ const Navbar = () => {
         {/*=============================== add icons to navbar for exit ============================== */}
      </div>
      <div className='products'>
-        <Link to='/AddProduct' className='link'>
-            <div className='text' style={{color:'white'}}>    
+        <div className='text' style={{color:'white'}}>  
+            <Link to='/AddProduct' className='link'>
                 <AiOutlinePlusCircle className='plus'/>
                 <span>Add product</span>
-            </div>
-        </Link>
-        <Link to='/ShoppingCart'>
-            <div className='bagContainer'>
+            </Link>
+        </div>
+        <div className='bagContainer'>
+            <Link to='/ShoppingCart'>
                 <BiShoppingBag  className='bag' />
-            </div>
-        </Link> 
+            </Link> 
+        </div>
      </div>
     </div> );
 }

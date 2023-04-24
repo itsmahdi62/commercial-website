@@ -5,7 +5,6 @@ import axios from "axios";
 import ModalPay from "../../UI/ModalPay/ModalPay";
 import Navbar from "../../components/Navbar/Navbar";
 const Payment = () => {
-
     const [card , setCard] = useState("");
     const [Cvv2,setCvv2] = useState('');
     const [year,setYear] = useState('');

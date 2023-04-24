@@ -34,7 +34,7 @@
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    .logoDiv{
+                    .logoDivlogin{
                         display: flex;
                         align-items: center;
                         padding: 1rem 0;
@@ -69,45 +69,30 @@
                     text-align: center;
                     align-self: center;
                     padding: 2rem;
-                    .username{
-                        // display: flex;
-                        // flex-direction: column;
-                        border: 0.5px solid rgba(0, 0, 0, 0.274);
-                        label{
-                            font-weight: 400;
-    
-                            position: relative;
-                            top: -1.8rem;
-                            right: -0.4rem;
-                            background-color:white ;
-                            padding: 0.4rem;
+                        .optionLogin{
+                            display: flex;
+                            flex-direction: column;
+                            margin: 2rem 0 ;
+                            border: 0.5px solid rgba(0, 0, 0, 0.274);
+                            label{
+                                flex: 1;
+                                text-align: left;
+                                font-weight: 400;
+                                position: relative;
+                                top: -1rem;
+                                right: -1rem;
+                                width: 7rem;
+                                background-color:white ;
+                                padding: 0;
+                            }
+                            input{
+                                border: none;
+                                flex: 8;
+                                padding: 1rem;
+                                outline: none;
+                            }
                         }
-                        input{
-                            border: none;
-                            padding: 1.25rem;
-                            outline: none;
-                        }
-                    }
-                    .password{
-                        // display: flex;
-                        // flex-direction: column;
-                        margin:  2rem 0;
-                        border: 0.5px solid rgba(0, 0, 0, 0.288);
-                        label{
-                            font-weight: 400;
-    
-                            position: relative;
-                            top: -1.8rem;
-                            right: -0.4rem;
-                            background-color:white ;
-                            padding: 0.4rem;
-                        }
-                        input{
-                            border: none;
-                            outline: none;
-                            padding: 1.25rem;
-                        }
-                    }
+                   
                     .btn{
                         display: flex;
                         flex-direction: column;
@@ -129,7 +114,7 @@
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:720px) {
     .main{
         display: flex;
         justify-content: center;
@@ -137,7 +122,7 @@
         height: 100vh;
         align-items: center;
         .login{
-            height: 50%;
+            height: 70%;
             display: flex;
             align-items: center;
             background-color: white;
@@ -155,7 +140,7 @@
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    .logoDiv{
+                    .logoDivlogin{
                         display: flex;
                         align-items: center;
                         padding: 1rem 0;
@@ -190,43 +175,25 @@
                     text-align: center;
                     align-self: center;
                     padding: 2rem;
-                    .username{
-                        // display: flex;
-                        // flex-direction: column;
+                    .optionLogin{
+                        display: flex;
+                        flex-direction: column;
+                        margin: 2rem 0 ;
                         border: 0.5px solid rgba(0, 0, 0, 0.274);
                         label{
+                            text-align: left;
                             font-weight: 400;
-    
                             position: relative;
-                            top: -1.8rem;
-                            right: -0.4rem;
+                            top: -1rem;
+                            right: -1rem;
+                            width: 7rem;
                             background-color:white ;
-                            padding: 0.4rem;
+                            padding: 0;
                         }
                         input{
                             border: none;
-                            padding: 1.25rem;
+                            padding: 1rem;
                             outline: none;
-                        }
-                    }
-                    .password{
-                        // display: flex;
-                        // flex-direction: column;
-                        margin:  2rem 0;
-                        border: 0.5px solid rgba(0, 0, 0, 0.288);
-                        label{
-                            font-weight: 400;
-    
-                            position: relative;
-                            top: -1.8rem;
-                            right: -0.4rem;
-                            background-color:white ;
-                            padding: 0.4rem;
-                        }
-                        input{
-                            border: none;
-                            outline: none;
-                            padding: 1.25rem;
                         }
                     }
                     .btn{

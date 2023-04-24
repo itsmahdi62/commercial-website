@@ -78,7 +78,7 @@ const AddProduct = () => {
                         <input type="text" onChange={(e) =>setPrice(e.target.value)}/>
                     </div>
                     <div className="btn-form mb-5">
-                        <Link to='/' className="d"><span className="cancel">Cancel</span></Link>
+                        <Link to='/home' className="d"><span className="cancel">Cancel</span></Link>
                         <button className="addBtn" onClick={addProductHandler}>Add Product</button>
                     </div>
                 </div>

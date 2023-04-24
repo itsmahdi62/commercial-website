@@ -1,7 +1,8 @@
 import "./ShoppingCart.scss"
-import { Link , Route ,Routes} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
 const ShoppingCart = () => {
     const [prime , setPrime] = useState('loan')
     const toggleHandler =  () =>{
@@ -70,6 +71,7 @@ const ShoppingCart = () => {
                  </div>
                 </div>
             </div>
+            <Outlet/>
         </div> );
 }
  

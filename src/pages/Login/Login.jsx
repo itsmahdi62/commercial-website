@@ -29,8 +29,9 @@ const Login = (token , setToken) => {
           },
         }).then(response =>{
             console.log(response.data.token)
-            setToken(response.data.token)
             setLoading(false)
+            setToken(response.data.token)
+            
             localStorage.setItem("userToken",response.data.token)
         }).catch((err) =>{
             console.log(err.response.data)
@@ -41,13 +42,14 @@ const Login = (token , setToken) => {
           navigate('/home')
         }
   }
+
+
   const modalCloseHandler = () =>{
     setLoading(false)
   }
 
   return (
     <div className="main"> 
-     
      {loading && <Loading />} 
       <div className="login">
           <div className="imgDiv">
@@ -55,7 +57,7 @@ const Login = (token , setToken) => {
           </div>
           <div className="infoDiv">
               <div className="titleDiv">
-                  <div className="logoDiv">
+                  <div className="logoDivlogin">
                   <img src={logo1} alt="" className="logo logoBag" />
                   <img src={logo} alt="" className="logo logoText" />
                   </div>
@@ -63,11 +65,11 @@ const Login = (token , setToken) => {
                   <p>A loremAoremA loremA loremA loremA loremA loremA loremA loremA loremA lorem</p>
               </div>
               <div className="form">
-                <div className="username">
+                <div className="optionLogin">
                   <label>Username</label>
                   <input type="text"  value={username} onChange={(e) =>setUsername(e.target.value)} />
                 </div>
-                <div className="password">
+                <div className="optionLogin">
                   <label>password</label>
                   <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
                 </div>
