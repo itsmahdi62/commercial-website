@@ -6,8 +6,8 @@ import logo1 from "../../assets/Group 2.png"
 import { useState } from 'react';
 import Loading from "../../UI/Loading/Loading";
 import {useNavigate} from 'react-router-dom'
-const Login = (token , setToken) => {
-  // const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
+const Login = () => {
+  const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
 
     const navigate = useNavigate() ;
     const [username , setUsername] = useState("");
