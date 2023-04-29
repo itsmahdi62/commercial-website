@@ -12,7 +12,6 @@ import Payment from './pages/Payment/Payment';
 import Category  from './components/Category/Category';
 import Product from './components/Product/Product';
 const App =()  =>{
-  const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
   return (
     <div>
        <Provider store={store}>

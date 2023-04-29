@@ -6,8 +6,8 @@ import logo1 from "../../assets/Group 2.png"
 import { useState } from 'react';
 import Loading from "../../UI/Loading/Loading";
 import {useNavigate} from 'react-router-dom'
-const Login = (token , setToken) => {
-  // const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
+const Login = () => {
+    const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
 
     const navigate = useNavigate() ;
     const [username , setUsername] = useState("");
@@ -28,19 +28,22 @@ const Login = (token , setToken) => {
               password:password,
           },
         }).then(response =>{
+            localStorage.setItem('shop' ,JSON.stringify(response.data))
             console.log(response.data.token)
             setLoading(false)
-            setToken(response.data.token)
-            
+            // setToken(response.data.token)
+            setToken(response)
+            setTimeout( () => navigate('/home') , 2000)
+            console.log("sskksksksk")
             localStorage.setItem("userToken",response.data.token)
         }).catch((err) =>{
-            console.log(err.response.data)
+            // console.log(err.response.data)
+            console.log(err)
             setError(err.response.data)
+            console.log("ddkdk")
             setLoading(false)
         })
-        if(token){
-          navigate('/home')
-        }
+        
   }
 
 
