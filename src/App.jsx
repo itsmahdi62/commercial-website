@@ -11,6 +11,7 @@ import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Payment from './pages/Payment/Payment';
 import Category  from './components/Category/Category';
 import Product from './components/Product/Product';
+import FirstChild from "./pages/FirstChild/FirstChild"
 const App =()  =>{
   
   return (
@@ -24,6 +25,7 @@ const App =()  =>{
             <Route path="/" element={<Navigate replace to="/login"  />}/>
             <Route path="/login" element={<Login  />}/>
             <Route path="/home" element={<Home />}> 
+                <Route path='' element={<FirstChild />} />
                 <Route path="AddProduct" element={<AddProduct />}/>
                 <Route path='shoppingCart' element={<ShoppingCart/>} />
                 <Route path='payment' element={<Payment />} />

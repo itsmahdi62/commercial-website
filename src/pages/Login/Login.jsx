@@ -33,7 +33,7 @@ const Login = () => {
           setLoading(false)
           // setToken(response.data.token)
           setToken(response)
-          setTimeout( () => navigate('/home') , 2000)
+          setTimeout( () => navigate('/home') , 500)
           console.log("sskksksksk")
           localStorage.setItem("userToken",response.data.token)
       }).catch((err) =>{
