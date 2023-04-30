@@ -24,15 +24,12 @@ const App =()  =>{
             {/* <Route  path="/"   element={token ? <Home/> : <Login />}/> */}
             {/* <Route path='/' element={token ? <Home /> : <Login token={token} setToken={setToken}/>} /> */}
             {/* <Route path="/login" element={token ? <Navigate replace to="/"/> : <Login token={token} setToken={setToken} />}/> */}
-             
             <Route path="/" element={<Navigate replace to="/login"/>}/>
             <Route path="/login" element={<Login  />}/>
-            <Route path="/home" element={<Home />}/>
-            <Route path="/AddProduct" element={<AddProduct />}/>
-            
-            <Route path='/shoppingCart' element={<ShoppingCart/>} />
-                 <Route path='/payment' element={<Payment />} />
-            
+            <Route path="/home" element={<Home />} />
+                <Route path="/AddProduct" element={<AddProduct />}/>
+                <Route path='/shoppingCart' element={<ShoppingCart/>} />
+                <Route path='/payment' element={<Payment />} />
           </Routes>
         </main>
        </div>

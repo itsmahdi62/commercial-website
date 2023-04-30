@@ -43,10 +43,7 @@ const Login = () => {
             console.log("ddkdk")
             setLoading(false)
         })
-        
   }
-
-
   const modalCloseHandler = () =>{
     setLoading(false)
   }
