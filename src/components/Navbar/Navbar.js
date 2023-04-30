@@ -1,4 +1,4 @@
-import { useState , useEffect} from 'react';
+import { useState , useEffect , createContext} from 'react';
 import "./Navbar.scss";
 import { Link } from 'react-router-dom';
 //=================== import icons ===================
@@ -9,7 +9,6 @@ import {TbGridDots} from 'react-icons/tb'
 import logo from "../../assets/vector.png"
 import logo1 from "../../assets/Group 2.png"
 import axios from 'axios';
-
 
 
 const Navbar = () => {
@@ -53,10 +52,13 @@ const Navbar = () => {
                 <span>Add product</span>
             </Link>
         </div>
-        <div className='bagContainer'>
+        <div className='bagContainer position-relative'>
             <Link to='/ShoppingCart'>
                 <BiShoppingBag  className='bag' />
             </Link> 
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              +99
+            </span>
         </div>
      </div>
     </div> );

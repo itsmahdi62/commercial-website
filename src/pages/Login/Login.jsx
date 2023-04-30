@@ -28,19 +28,21 @@ const Login = () => {
               password:password,
           },
         }).then(response =>{
-            console.log(response.data.token)
-            setLoading(false)
-            setToken(response.data.token)
-            
-            localStorage.setItem("userToken",response.data.token)
-        }).catch((err) =>{
-            console.log(err.response.data)
-            setError(err.response.data)
-            setLoading(false)
-        })
-        if(token){
-          navigate('/home')
-        }
+          localStorage.setItem('shop' ,JSON.stringify(response.data))
+          console.log(response.data.token)
+          setLoading(false)
+          // setToken(response.data.token)
+          setToken(response)
+          setTimeout( () => navigate('/home') , 2000)
+          console.log("sskksksksk")
+          localStorage.setItem("userToken",response.data.token)
+      }).catch((err) =>{
+          // console.log(err.response.data)
+          console.log(err)
+          setError(err.response.data)
+          console.log("ddkdk")
+          setLoading(false)
+      })
   }
 
 

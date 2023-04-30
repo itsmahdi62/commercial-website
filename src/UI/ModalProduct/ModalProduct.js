@@ -3,6 +3,8 @@ import {AiOutlineStar} from "react-icons/ai"
 import { BiShoppingBag } from "react-icons/bi"
 import Backdrop from "../Backdrop/Backdrop"
 import Wrapper from "../../components/hoc/Wrapper"
+import { useContext } from "react"
+
 const ModalProduct = (props) => {
     return ( 
        <Wrapper >
