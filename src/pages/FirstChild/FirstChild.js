@@ -1,4 +1,3 @@
-import "./Home.scss"
 import Product from "../../components/Product/Product"
 import Navbar from '../../components/Navbar/Navbar'
 import ModalProduct from "../../UI/ModalProduct/ModalProduct";
@@ -16,22 +15,50 @@ import banner from "../../assets/banner.png"
 import {HiSortDescending} from "react-icons/hi"
 import {AiOutlineArrowUp} from "react-icons/ai"
 import {AiOutlineArrowDown} from "react-icons/ai"
-const Home = () => {
-    const [order , setOrder] = useState(false)
-    const [type , setType] = useState("")
-    const setOrderHandler = (category) => {
-        setOrder(true)
-        setType(category)
-    }
-    // const [showByOrder, setShowByOrder] = useState(true)
-    // const categoryHandler = (cat) => {
 
-    // }
+const FirstChild = () => {
+        // ================= get product using redux ======================
+        const dispatch = useDispatch()
+        const postList = useSelector( state => state.post.postList )
+        useEffect(() =>{
+              dispatch(fetchPosts()) 
+         })
+         //====================sort products handler ======================
+        const [data , setData] = useState([]); 
+        useEffect( ()=>{
+            axios({
+                method:"GET",
+                url: `https://fakestoreapi.com/products?sort=${order}`
+            }).then(response =>{
+                setData(response.data)
+                // console.log(response.data)
+            }).catch(e=>console.log(e))
+        })
+    
+        const [order ,setOrder] = useState('')
+        const ascendingHandler = () =>{
+            setOrder('ask')
+        }
+        const descendingHandler = () =>{
+            setOrder('desc')
+        }
+        // ================== show modal ======================
+        const [modal ,setModal] = useState(false)
+        let specialproduct = 0 ;
+        const modalHandler = (id) =>{
+            setModal(true)        
+            specialproduct = data.find(item => item.id === id )
+        }
+        //============================ close modal ======================
+        const modalCloseHandler =() =>{
+            setModal(false)
+        }
+        // const [showByOrder, setShowByOrder] = useState(true)
+        // const categoryHandler = (cat) => {
+        // }
     return ( 
-    <div className="home">
-        {/* <Navbar category={categoryHandler}/> */}
-        <Navbar/>
-        <div className="banner">
+        <div className="firstChild">
+            <div className="banner">
             <img src={banner} alt="" />
         </div>
         <div className="sortSection">
@@ -79,7 +106,8 @@ const Home = () => {
     }
     </div>} 
         {modal && <ModalProduct modalClose={modalCloseHandler}/>}
-    </div>  );
+        </div>
+     );
 }
  
-export default Home;
+export default FirstChild
