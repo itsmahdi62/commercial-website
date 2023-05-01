@@ -13,6 +13,7 @@ import Category  from './components/Category/Category';
 import Product from './components/Product/Product';
 import FirstChild from "./pages/FirstChild/FirstChild"
 const App =()  =>{
+  
   return (
     <div>
        <Provider store={store}>

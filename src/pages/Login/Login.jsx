@@ -7,7 +7,8 @@ import { useState } from 'react';
 import Loading from "../../UI/Loading/Loading";
 import {useNavigate} from 'react-router-dom'
 const Login = () => {
-    const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
+  const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
+
     const navigate = useNavigate() ;
     const [username , setUsername] = useState("");
     const [password , setPassword] = useState("");
@@ -27,7 +28,6 @@ const Login = () => {
               password:password,
           },
         }).then(response =>{
-
           localStorage.setItem('shop' ,JSON.stringify(response.data))
           console.log(response.data.token)
           setLoading(false)
@@ -44,6 +44,8 @@ const Login = () => {
           setLoading(false)
       })
   }
+
+
   const modalCloseHandler = () =>{
     setLoading(false)
   }
