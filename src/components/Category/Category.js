@@ -3,20 +3,22 @@ import { useState , useEffect } from "react";
 import Product from "../Product/Product";
 import ModalProduct from "../../UI/ModalProduct/ModalProduct";
 import "./Category.scss"
-const Category = (props) => {
+import {useParams} from 'react'
+const Category = () => {
+
+    const {categoryType} = useParams();
     const [modal , setModal] = useState(false)
     const [cat ,setCat ] = useState([]); 
-    useEffect( ()=>{
-        console.log("zzzzzzzzzzzzzzzzzzzz")
-
+    useEffect( ()=> {
+        // console.log("zzzzzzzzzzzzzzzzzzzz")
         axios({
             method:"GET",
-            url: `https://fakestoreapi.com/products/category/${props.type}`
+            url: `https://fakestoreapi.com/products/category/${categoryType}`
         }).then(response =>{
             console.log(response.data)
             setCat(response.data)
         }).catch(e=>console.log(e))
-    },[props.type])
+    },[categoryType])
 
     console.log(cat)
     const modalHandler = () =>{

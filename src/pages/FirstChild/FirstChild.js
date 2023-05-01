@@ -2,6 +2,7 @@ import Product from "../../components/Product/Product"
 import Navbar from '../../components/Navbar/Navbar'
 import ModalProduct from "../../UI/ModalProduct/ModalProduct";
 import axios from "axios"
+import "./FirstChilde.scss"
 
 // ============== import hooks ==========
 import { useState , useEffect } from "react"
@@ -17,7 +18,7 @@ import {AiOutlineArrowUp} from "react-icons/ai"
 import {AiOutlineArrowDown} from "react-icons/ai"
 
 
-
+import "../Home/Home.scss"
 const FirstChild = () => {
     const [order ,setOrder] = useState('')
 
@@ -97,7 +98,7 @@ const FirstChild = () => {
     {
          postList.map((item) =>{
              return ( <Product 
-                 key={item.id}
+                 key={item.id} 
                  title={item.title}
                  description={item.description}
                  price={item.price}

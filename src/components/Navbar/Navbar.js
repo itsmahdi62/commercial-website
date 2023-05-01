@@ -25,6 +25,7 @@ const Navbar = (props) => {
             url: 'https://fakestoreapi.com/products/categories'
         }).then(response =>{
             setData(response.data)
+            console.log(response.data)
         }).catch(e=>console.log(e))
     },[])
 
@@ -40,7 +41,7 @@ const Navbar = (props) => {
      <div className={navbar}>
         <ul className="menu">
         {data.map((product, index) =>{
-                return <li key={product.id} className='links' onClick={()=>props.setOrderHandler(data[index])}>{data[index]}</li>
+                return <Link  className='links' to={`/home/category/${data[index]}`}><li key={product.id}>{data[index]}</li></Link>
         })}
         </ul>
         {/*=============================== add icons to navbar for exit ============================== */}
