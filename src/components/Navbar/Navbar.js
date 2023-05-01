@@ -47,13 +47,13 @@ const Navbar = (props) => {
      </div>
      <div className='products'>
         <div className='text' style={{color:'white'}}>  
-            <Link to='AddProduct' className='link'>
+            <Link to='/home/AddProduct' className='link'>
                 <AiOutlinePlusCircle className='plus'/>
                 <span>Add product</span>
             </Link>
         </div>
         <div className='bagContainer position-relative'>
-            <Link to='ShoppingCart'>
+            <Link to='/home/ShoppingCart'>
                 <BiShoppingBag  className='bag' />
             </Link> 
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
