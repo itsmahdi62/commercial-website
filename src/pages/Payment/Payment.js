@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Payment.scss"
 import { useState } from "react";
+import axios from "axios";
 import ModalPay from "../../UI/ModalPay/ModalPay";
 import Navbar from "../../components/Navbar/Navbar";
 const Payment = () => {

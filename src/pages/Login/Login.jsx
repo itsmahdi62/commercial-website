@@ -7,7 +7,7 @@ import { useState } from 'react';
 import Loading from "../../UI/Loading/Loading";
 import {useNavigate} from 'react-router-dom'
 const Login = () => {
-    const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
+  const [token , setToken] = useState(localStorage.getItem("userToken") ?? null)
 
     const navigate = useNavigate() ;
     const [username , setUsername] = useState("");
@@ -28,22 +28,24 @@ const Login = () => {
               password:password,
           },
         }).then(response =>{
-            localStorage.setItem('shop' ,JSON.stringify(response.data))
-            console.log(response.data.token)
-            setLoading(false)
-            // setToken(response.data.token)
-            setToken(response)
-            setTimeout( () => navigate('/home') , 2000)
-            console.log("sskksksksk")
-            localStorage.setItem("userToken",response.data.token)
-        }).catch((err) =>{
-            // console.log(err.response.data)
-            console.log(err)
-            setError(err.response.data)
-            console.log("ddkdk")
-            setLoading(false)
-        })
+          localStorage.setItem('shop' ,JSON.stringify(response.data))
+          console.log(response.data.token)
+          setLoading(false)
+          // setToken(response.data.token)
+          setToken(response)
+          setTimeout( () => navigate('/home') , 500)
+          console.log("sskksksksk")
+          localStorage.setItem("userToken",response.data.token)
+      }).catch((err) =>{
+          // console.log(err.response.data)
+          console.log(err)
+          setError(err.response.data)
+          console.log("ddkdk")
+          setLoading(false)
+      })
   }
+
+
   const modalCloseHandler = () =>{
     setLoading(false)
   }

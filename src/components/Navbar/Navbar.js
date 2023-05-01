@@ -1,4 +1,4 @@
-import { useState , useEffect} from 'react';
+import { useState , useEffect , createContext} from 'react';
 import "./Navbar.scss";
 import { Link } from 'react-router-dom';
 //=================== import icons ===================
@@ -11,8 +11,7 @@ import logo1 from "../../assets/Group 2.png"
 import axios from 'axios';
 
 
-
-const Navbar = () => {
+const Navbar = (props) => {
     // get menu by axios
     const[ navbar , setNavbar] = useState('navbar')
     const navbarHandler = () => {
@@ -27,7 +26,9 @@ const Navbar = () => {
         }).then(response =>{
             setData(response.data)
         }).catch(e=>console.log(e))
+        
     })
+
     return (
          <div className='header' >
              <div className="logoDiv">
@@ -40,22 +41,25 @@ const Navbar = () => {
      <div className={navbar}>
         <ul className="menu">
         {data.map((product, index) =>{
-                return <li key={product.id} ><Link to="/#" className='links'>{data[index]}</Link></li>
+                return <li key={product.id} className='links' onClick={()=>props.setOrderHandler(data[index])}>{data[index]}</li>
         })}
         </ul>
         {/*=============================== add icons to navbar for exit ============================== */}
      </div>
      <div className='products'>
         <div className='text' style={{color:'white'}}>  
-            <Link to='/AddProduct' className='link'>
+            <Link to='AddProduct' className='link'>
                 <AiOutlinePlusCircle className='plus'/>
                 <span>Add product</span>
             </Link>
         </div>
-        <div className='bagContainer'>
-            <Link to='/ShoppingCart'>
+        <div className='bagContainer position-relative'>
+            <Link to='ShoppingCart'>
                 <BiShoppingBag  className='bag' />
             </Link> 
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              +99
+            </span>
         </div>
      </div>
     </div> );

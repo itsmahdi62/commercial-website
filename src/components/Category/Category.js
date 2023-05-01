@@ -1,18 +1,18 @@
-import { Outlet } from "react-router-dom";
 import axios from "axios";
 import { useState , useEffect } from "react";
 import Product from "../Product/Product";
 import ModalProduct from "../../UI/ModalProduct/ModalProduct";
+import "./Category.scss"
 const Category = (props) => {
     const [modal , setModal] = useState(false)
-    const [data , setData] = useState([]); 
+    const [cat ,setCat ] = useState([]); 
     useEffect( ()=>{
         axios({
             method:"GET",
-            url: `https://fakestoreapi.com/products?sort=${props.category}`
+            url: `https://fakestoreapi.com/products?sort=${props.type}`
         }).then(response =>{
-            setData(response.data)
-            // console.log(response.data)
+            console.log(props.type)
+            setCat(response.data)
         }).catch(e=>console.log(e))
     })
     const modalHandler = () =>{
@@ -22,9 +22,9 @@ const Category = (props) => {
         setModal(false)
     }
     return ( 
-    <div>
+    <div className="category">
         {
-            data.map((item) =>{
+            cat.map((item) =>{
             return ( <Product 
                 key={item.id}
                 title={item.title}
