@@ -7,14 +7,18 @@ const Category = (props) => {
     const [modal , setModal] = useState(false)
     const [cat ,setCat ] = useState([]); 
     useEffect( ()=>{
+        console.log("zzzzzzzzzzzzzzzzzzzz")
+
         axios({
             method:"GET",
-            url: `https://fakestoreapi.com/products?sort=${props.type}`
+            url: `https://fakestoreapi.com/products/category/${props.type}`
         }).then(response =>{
-            console.log(props.type)
+            console.log(response.data)
             setCat(response.data)
         }).catch(e=>console.log(e))
-    })
+    },[props.type])
+
+    console.log(cat)
     const modalHandler = () =>{
             setModal(true)
     }

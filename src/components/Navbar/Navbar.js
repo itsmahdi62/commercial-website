@@ -26,8 +26,7 @@ const Navbar = (props) => {
         }).then(response =>{
             setData(response.data)
         }).catch(e=>console.log(e))
-        
-    })
+    },[])
 
     return (
          <div className='header' >

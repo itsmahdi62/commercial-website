@@ -19,12 +19,14 @@ import {AiOutlineArrowDown} from "react-icons/ai"
 
 
 const FirstChild = () => {
-        // ================= get product using redux ======================
+    const [order ,setOrder] = useState('')
+
+    // ================= get product using redux ======================
         const dispatch = useDispatch()
         const postList = useSelector( state => state.post.postList )
         useEffect(() =>{
               dispatch(fetchPosts()) 
-         })
+         },[])
          //====================sort products handler ======================
         const [data , setData] = useState([]); 
         useEffect( ()=>{
@@ -35,9 +37,8 @@ const FirstChild = () => {
                 setData(response.data)
                 // console.log(response.data)
             }).catch(e=>console.log(e))
-        })
+        },[order])
     
-        const [order ,setOrder] = useState('')
         const ascendingHandler = () =>{
             setOrder('ask')
         }
