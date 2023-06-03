@@ -1,4 +1,4 @@
-import "./Login.scss"
+// import "./Login.scss"
 import axios from 'axios';
 import lock from "../../assets/downloadReceipt.png"
 import logo from "../../assets/vector.png"
@@ -51,9 +51,9 @@ const Login = () => {
   }
 
   return (
-    <div className="main"> 
+    <div className="flex pt-12 justify-center bg-login h-full align-content-center"> 
      {loading && <Loading />} 
-      <div className="login">
+      <div className='flex h-full bg-white'>
           <div className="imgDiv">
             <img src={lock} alt="" />
           </div>
