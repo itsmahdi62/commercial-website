@@ -29,18 +29,18 @@ const Login = () => {
           },
         }).then(response =>{
           localStorage.setItem('shop' ,JSON.stringify(response.data))
-          console.log(response.data.token)
+          // console.log(response.data.token)
           setLoading(false)
           // setToken(response.data.token)
           setToken(response)
           setTimeout( () => navigate('/home') , 500)
-          console.log("sskksksksk")
+          // console.log("sskksksksk")
           localStorage.setItem("userToken",response.data.token)
       }).catch((err) =>{
           // console.log(err.response.data)
-          console.log(err)
+          // console.log(err)
           setError(err.response.data)
-          console.log("ddkdk")
+          // console.log("ddkdk")
           setLoading(false)
       })
   }
@@ -84,6 +84,7 @@ const Login = () => {
       </div>
       {loading && <Loading modalClose={modalCloseHandler} />}
     </div>
+    
   );
 }
 

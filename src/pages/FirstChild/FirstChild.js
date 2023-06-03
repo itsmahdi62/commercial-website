@@ -5,7 +5,7 @@ import axios from "axios"
 import "./FirstChilde.scss"
 
 // ============== import hooks ==========
-import { useState , useEffect } from "react"
+import { useState , useEffect,createContext } from "react"
 // ========== import redux hooks 
 import { useDispatch, useSelector } from "react-redux";
 import {fetchPosts} from '../../postSlice'
@@ -22,6 +22,7 @@ import "../Home/Home.scss"
 const FirstChild = () => {
     const [order ,setOrder] = useState('')
 
+    const AppContext = createContext()
     // ================= get product using redux ======================
         const dispatch = useDispatch()
         const postList = useSelector( state => state.post.postList )

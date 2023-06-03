@@ -6,11 +6,14 @@ import "./Category.scss"
 import {useParams} from 'react'
 const Category = () => {
 
-    const {categoryType} = useParams();
+    let {categoryType} = useParams();
+    console.log(categoryType)
+    console.log({categoryType})
+
     const [modal , setModal] = useState(false)
     const [cat ,setCat ] = useState([]); 
     useEffect( ()=> {
-        // console.log("zzzzzzzzzzzzzzzzzzzz")
+    console.log(categoryType)
         axios({
             method:"GET",
             url: `https://fakestoreapi.com/products/category/${categoryType}`

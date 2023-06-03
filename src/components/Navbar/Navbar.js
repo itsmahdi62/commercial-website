@@ -28,7 +28,6 @@ const Navbar = (props) => {
             console.log(response.data)
         }).catch(e=>console.log(e))
     },[])
-
     return (
          <div className='header' >
              <div className="logoDiv">
