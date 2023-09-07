@@ -1,4 +1,4 @@
-// import "./Login.scss"
+import "./Login.scss"
 import axios from 'axios';
 import lock from "../../assets/downloadReceipt.png"
 import logo from "../../assets/vector.png"
@@ -51,9 +51,9 @@ const Login = () => {
   }
 
   return (
-    <div className="flex pt-12 justify-center bg-login h-full align-content-center"> 
+    <div className="main"> 
      {loading && <Loading />} 
-      <div className='flex h-full bg-white'>
+      <div className="login">
           <div className="imgDiv">
             <img src={lock} alt="" />
           </div>
@@ -67,13 +67,17 @@ const Login = () => {
                   <p>A loremAoremA loremA loremA loremA loremA loremA loremA loremA loremA lorem</p>
               </div>
               <div className="form">
-                <div className="optionLogin">
-                  <label>Username</label>
+                <div className="optionLogin position-relative">
+                  <span class="position-absolute top-3 start-12 translate-middle badge rounded-pill text-dark">
+                    <label>Username</label>
+                  </span>
                   <input type="text"  value={username} onChange={(e) =>setUsername(e.target.value)} />
                 </div>
-                <div className="optionLogin">
-                  <label>password</label>
-                  <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)}/>
+                <div className="optionLogin position-relative">
+                  <span class="position-absolute top-3 start-12 translate-middle badge rounded-pill text-dark">
+                      <label>Password</label>
+                    </span>
+                  <input type="password" value={password} onChange={(e) =>setPassword(e.target.value)} className="form-check-input"/>
                 </div>
                 <div className="btn">
                   {error && <small>{('Wrong username or password')}</small>}
